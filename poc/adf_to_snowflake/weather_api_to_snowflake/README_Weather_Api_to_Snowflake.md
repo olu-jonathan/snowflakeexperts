@@ -885,21 +885,6 @@ The same ADF logic processes every city through a dynamic `ForEach`.
 The Streamlit application consumes an analytics-ready view rather than
 parsing raw JSON.
 
-------------------------------------------------------------------------
-
-# 📋 Project Summary
-
-  Component        Technology                  Responsibility
-  ---------------- --------------------------- ------------------------------
-  Weather Source   wttr.in API                 Provides weather JSON
-  Orchestration    Azure Data Factory          Controls ingestion workflow
-  Reference Data   Snowflake                   Stores capital cities
-  Raw Storage      Snowflake + Azure Storage   Preserves source JSON
-  Transformation   Snowflake Scripting         Flattens and transforms JSON
-  Data Warehouse   Snowflake                   Stores transformed data
-  Presentation     Snowflake View              Serves dashboard-ready data
-  Dashboard        Streamlit in Snowflake      Visualizes weather insights
-  Schedule         ADF Trigger                 Runs every 30 minutes
 
 ------------------------------------------------------------------------
 
