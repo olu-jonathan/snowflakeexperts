@@ -1,0 +1,25 @@
+{
+	"name": "3_hours_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pull_api_to_snowflake",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 3,
+				"startTime": "2026-08-27T01:36:00",
+				"endTime": "2026-08-30T01:36:00",
+				"timeZone": "Mountain Standard Time"
+			}
+		}
+	}
+}

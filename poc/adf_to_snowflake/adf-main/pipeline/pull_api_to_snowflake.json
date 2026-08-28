@@ -1,0 +1,64 @@
+{
+	"name": "pull_api_to_snowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "pull_from_api",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd"
+				}
+			},
+			{
+				"name": "dump_in_snowflake",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "pull_from_api",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "crypto_snowflake",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": {
+								"value": "INSERT INTO BRONZE.CRYPTO_INGEST SELECT '@{pipeline().RunId}', CURRENT_TIMESTAMP(), '@{concat('{\\\"bitcoin\\\":{\\\"usd\\\":', string(activity('pull_from_api').output.bitcoin.usd), '},', '\\\"ethereum\\\":{\\\"usd\\\":', string(activity('pull_from_api').output.ethereum.usd), '},', '\\\"solana\\\":{\\\"usd\\\":', string(activity('pull_from_api').output.solana.usd), '}}')}'",
+								"type": "Expression"
+							}
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00",
+					"treatDecimalAsString": false
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-08-28T00:15:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

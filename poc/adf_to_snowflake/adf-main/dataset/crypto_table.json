@@ -1,0 +1,36 @@
+{
+	"name": "crypto_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crypto_snowflake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "RUN_ID",
+				"type": "VARCHAR",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "INGESTED_AT",
+				"type": "TIMESTAMP_NTZ",
+				"precision": 0,
+				"scale": 9
+			},
+			{
+				"name": "PAYLOAD",
+				"type": "VARIANT",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "BRONZE",
+			"table": "CRYPTO_INGEST"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

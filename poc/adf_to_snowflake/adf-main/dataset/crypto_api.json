@@ -1,0 +1,16 @@
+{
+	"name": "crypto_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crypto_api",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
