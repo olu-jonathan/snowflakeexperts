@@ -1,6 +1,6 @@
-### REPLACE THE PLACEHOLDER <your_last_name> WITH YOUR LAST NAME IN THE DATABASE NAME on line 115-118 of the code below. For example, if your last name is Alonge, you would replace <your_last_name> with alonge to get alonge_weather_db.PRESENTATION.WEATHER_REPORT.
+### REPLACE THE PLACEHOLDER <your_last_name> WITH YOUR LAST NAME or use the database you work with. 
 
-
+DATABASE_NAME = "<your_last_name>_DB"
 # ============================================================
 # 🌤️ Global Weather Dashboard
 # Azure Data Factory → Weather API → Snowflake → Streamlit
@@ -118,7 +118,7 @@ def load_weather_data():
             HUMIDITY,
             TEMP_C,
             WEATHER_DESC
-        FROM <your_last_name>_weather_db.PRESENTATION.WEATHER_REPORT
+        FROM {DATABASE_NAME}.PRESENTATION.WEATHER_REPORT
         ORDER BY COUNTRY, AREA_NAME
     """
 

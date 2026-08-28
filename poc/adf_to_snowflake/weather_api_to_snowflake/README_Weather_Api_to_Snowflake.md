@@ -903,35 +903,7 @@ parsing raw JSON.
 
 ------------------------------------------------------------------------
 
-# 🏁 Final Architecture
+# 🏁 Final Dashboard
 
-``` text
-                 WEATHER API
-                     │
-                     │ JSON
-                     ▼
-              AZURE DATA FACTORY
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-          ▼                     ▼
-   SNOWFLAKE RAW          AZURE STORAGE
- WEATHER_LANDING           raw-weather/
-          │
-          ▼
-   SNOWFLAKE PROCEDURE
-          │
-          ▼
-   TRANSFORMED TABLE
-          │
-          ▼
-    PRESENTATION VIEW
-          │
-          ▼
-   STREAMLIT IN SNOWFLAKE
-          │
-          ▼
-   🌎 WEATHER DASHBOARD
-```
-
+![alt text](image-1.png)
 ------------------------------------------------------------------------
