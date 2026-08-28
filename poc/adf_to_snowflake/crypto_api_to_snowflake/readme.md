@@ -23,6 +23,7 @@ Snowflake view.
 - ADF Snowflake linked service (key pair auth recommended for unattended
   scheduled runs — token/OAuth auth can expire and silently break the trigger)
 - No API key needed for CoinGecko's public `/simple/price` endpoint
+- Fork this repo into your github enironment
 
 ## Setup
 
@@ -34,44 +35,39 @@ Run [`sql/01_create_table.sql`](sql/01_create_table.sql).
 
 Run [`sql/02_flatten_view.sql`](sql/02_flatten_view.sql).
 
-### 3. Azure Data Factory — linked services
 
-Create two linked services in your ADF instance (not included here, since
-these contain environment-specific connection details):
+### 3. Azure Data Factory — Import Pipeline
 
-- **REST linked service** — base URL `https://api.coingecko.com`, no auth
-- **Snowflake linked service** — your account/warehouse/database/schema,
-  key pair authentication recommended
+You can import a complete pipeline that has been setup for you.
 
-### 4. Azure Data Factory — import the pipeline
 
-In ADF Studio: **Author → Pipelines → Import from pipeline template**, or
-manually create a pipeline named `pull_crypto_prices` and paste in the
-JSON from [`adf/pipeline_crypto_ingest.json`](adf/pipeline_crypto_ingest.json).
+![alt text](image.png)
 
-You will need to re-point the two activities at your own linked service
-names after import, since linked service references aren't portable
-across ADF instances.
+![alt text](image-1.png)
+
+
+1. Create a new adf instance from azure portal.
+2. Launch the adf studio and connect the code repository to link to your forked repo. In your setting, use path **/poc/adf_to_snowflake/crypto_api_to_snowflake
+/adf-main/** Ensure you uncheck **Import existing resources to repository**
+3. Once the repo is connect and the resources are imported, go to the red marked points in the image and edit your snowflake credentials.
+4. Test the connection to ensure it works before you click APPLY.
+5. You can open the pipeline and DEBUG once to ensure data lands in your snowflake table.
+6. If you leave it running, it will pull data every 3 hours.
+
+### 4. Pipeline explained.
 
 Pipeline activities:
-1. **pull_from_api** (Web Activity) — GETs current BTC/ETH/SOL prices in USD
-2. **insert_to_snowflake** (Script Activity) — builds a clean JSON string
+- **pull_from_api** (Web Activity) — GETs current BTC/ETH/SOL prices in USD
+- **insert_to_snowflake** (Script Activity) — builds a clean JSON string
    from the response and inserts it as `VARCHAR` into `BRONZE.CRYPTO_INGEST`
-
-### 5. Azure Data Factory — import the trigger
-
-Create a Schedule trigger named `every_30_min` using
-[`adf/trigger_every_30_min.json`](adf/trigger_every_30_min.json) as a
-reference, or recreate it manually: **Recurrence = Every 30 minutes**.
-
-Attach the trigger to the pipeline, then **Publish all**.
+- Tiggers **Every 30 minutes**.
 
 ### 6. Test
 
-Run the pipeline manually first via **Trigger now**, then confirm data
+Run the pipeline manually first via **Trigger now** or **Debug**, then confirm data
 landed:
 
-```sql
+```sql in snowflake
 SELECT * FROM SILVER.CRYPTO_PRICES ORDER BY INGESTED_AT DESC;
 ```
 
