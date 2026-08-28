@@ -3,6 +3,8 @@
 -- unexpected responses can still land without failing the pipeline.
 -- Parsing/validation happens downstream via TRY_PARSE_JSON().
 
+
+CREATE DATABASE IF NOT EXISTS GENERAL;
 CREATE SCHEMA IF NOT EXISTS BRONZE;
 
 CREATE TABLE IF NOT EXISTS BRONZE.CRYPTO_INGEST (
