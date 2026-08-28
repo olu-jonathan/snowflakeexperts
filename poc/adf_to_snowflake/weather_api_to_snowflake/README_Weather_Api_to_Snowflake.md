@@ -320,20 +320,6 @@ relational structure that is easier to query.
 The presentation view exposes the data needed by the Streamlit
 application.
 
-Example:
-
-``` sql
-SELECT
-    AREA_NAME,
-    HUMIDITY,
-    TEMP_C,
-    WEATHER_DESC,
-    OBS_TIME,
-    CITY_NAME,
-    COUNTRY
-FROM TRANSFORMED.WEATHER_TRANSFORMED;
-```
-
 The presentation layer prevents the Streamlit application from having to
 understand the underlying JSON structure.
 
@@ -379,6 +365,8 @@ engine.
 
 # ⚙️ Azure Data Factory Pipeline
 
+![alt text](image.png)
+
 The ADF pipeline contains the following major activities.
 
   -----------------------------------------------------------------------
@@ -412,8 +400,7 @@ Conceptual query:
 
 ``` sql
 SELECT
-    CITY_NAME,
-    COUNTRY
+    CAPITAL_CITY
 FROM RAW.CAPITAL_CITIES;
 ```
 
@@ -434,10 +421,8 @@ Conceptual expression:
 Within the loop, the current city can be referenced using:
 
 ``` text
-@item().CITY_NAME
+@item().CAPITAL_CITY
 ```
-
-The exact expression depends on the column names in the reference table.
 
 ------------------------------------------------------------------------
 
@@ -605,17 +590,17 @@ ALONGE_DB
 │   └── WEATHER_TRANSFORMED
 │
 └── PRESENTATION
-    └── V_WEATHER_CURRENT
+    └── WEATHER_REPORT
 ```
 
 Example:
 
 ``` sql
-CREATE DATABASE IF NOT EXISTS ALONGE_DB;
+CREATE DATABASE IF NOT EXISTS GENERAL;
 
-CREATE SCHEMA IF NOT EXISTS ALONGE_DB.RAW;
-CREATE SCHEMA IF NOT EXISTS ALONGE_DB.TRANSFORMED;
-CREATE SCHEMA IF NOT EXISTS ALONGE_DB.PRESENTATION;
+CREATE SCHEMA IF NOT EXISTS GENERAL.RAW;
+CREATE SCHEMA IF NOT EXISTS GENERAL.TRANSFORMED;
+CREATE SCHEMA IF NOT EXISTS GENERAL.PRESENTATION;
 ```
 
 Create/populate the capital-city reference table before executing the
@@ -630,17 +615,6 @@ The ADF implementation requires connectivity to:
 1.  Snowflake
 2.  Azure Storage
 3.  Weather API
-
-Do not commit passwords, private keys, tokens, or other secrets to
-GitHub.
-
-Recommended approaches include:
-
--   Azure Key Vault
--   ADF managed identity
--   Snowflake key-pair authentication
--   Azure Storage managed identity / RBAC
--   Secure ADF linked-service parameters
 
 ------------------------------------------------------------------------
 
@@ -668,7 +642,7 @@ A recommended repository layout is:
 │   └── factory/
 │       └── ...
 │
-├── snowflake/
+├── sql/
 │   ├── 01_database_schema.sql
 │   ├── 02_capital_cities.sql
 │   ├── 03_weather_landing.sql
@@ -683,9 +657,6 @@ A recommended repository layout is:
 └── docs/
     └── architecture.png
 ```
-
-Adjust the directory names to match the actual ADF Git integration
-structure in your repository.
 
 ------------------------------------------------------------------------
 
@@ -801,7 +772,7 @@ Query:
 
 ``` sql
 SELECT *
-FROM ALONGE_DB.RAW.WEATHER_LANDING;
+FROM RAW.WEATHER_LANDING;
 ```
 
 Confirm that the JSON payload has been loaded successfully.
@@ -814,8 +785,8 @@ Query:
 
 ``` sql
 SELECT *
-FROM ALONGE_DB.TRANSFORMED.WEATHER_TRANSFORMED
-ORDER BY OBS_TIME DESC;
+FROM TRANSFORMED.WEATHER_TRANSFORMED
+ORDER BY INSERTED_AT DESC;
 ```
 
 Confirm that temperature, humidity, city, country and weather
@@ -827,7 +798,7 @@ description have been extracted.
 
 ``` sql
 SELECT *
-FROM ALONGE_DB.PRESENTATION.V_WEATHER_CURRENT;
+FROM PRESENTATION.WEATHER_REPORT;
 ```
 
 ------------------------------------------------------------------------
@@ -846,253 +817,7 @@ raw-weather/{city}/{timestamp}.json
 
 Confirm that the dashboard displays the newly ingested weather data.
 
-------------------------------------------------------------------------
 
-# 🛠️ Troubleshooting
-
-## ADF Lookup returns no cities
-
-Check:
-
-``` sql
-SELECT COUNT(*)
-FROM ALONGE_DB.RAW.CAPITAL_CITIES;
-```
-
-Also verify the ADF Snowflake linked service and permissions.
-
-------------------------------------------------------------------------
-
-## Weather API call fails
-
-Check:
-
--   City name
--   URL construction
--   API response
--   Network access
--   Special characters in city names
--   ADF Web Activity configuration
-
-Test the endpoint independently:
-
-``` text
-https://wttr.in/London?format=j1
-```
-
-------------------------------------------------------------------------
-
-## Snowflake load fails
-
-Check:
-
--   Snowflake linked service
--   Database/schema
--   Target table
--   `VARIANT` mapping
--   Snowflake role permissions
--   Warehouse availability
-
-------------------------------------------------------------------------
-
-## Stored procedure fails
-
-Check:
-
--   JSON path expressions
--   `LATERAL FLATTEN`
--   Data types
--   NULL values
--   Target table structure
-
-A useful debugging technique is to inspect the raw JSON first before
-modifying the transformation logic.
-
-------------------------------------------------------------------------
-
-## Streamlit displays no data
-
-Verify the presentation view:
-
-``` sql
-SELECT COUNT(*)
-FROM ALONGE_DB.PRESENTATION.V_WEATHER_CURRENT;
-```
-
-If the view contains data, check the Streamlit application's
-database/schema/warehouse configuration and query.
-
-------------------------------------------------------------------------
-
-# 🔒 Security Considerations
-
-This is a demonstration project, but the following production practices
-are recommended.
-
-### Never commit secrets
-
-Do not commit:
-
-``` text
-passwords
-private keys
-API tokens
-client secrets
-connection strings
-access tokens
-```
-
-Use:
-
--   Azure Key Vault
--   ADF secure parameters
--   Managed identities
--   Snowflake key-pair authentication
--   RBAC
-
-### Principle of least privilege
-
-ADF should only receive the permissions it needs.
-
-For example:
-
-``` text
-ADF
- ├── READ  → CAPITAL_CITIES
- ├── WRITE → WEATHER_LANDING
- └── EXECUTE → Transformation Procedure
-```
-
-The Streamlit application should receive only the permissions required
-to query the presentation layer.
-
-------------------------------------------------------------------------
-
-# 📈 Production Improvements
-
-The current project is intentionally simple enough for learning and
-demonstration.
-
-A production implementation could be enhanced with:
-
-### 1. Historical raw data
-
-Instead of truncating the landing table, retain each API response with
-metadata:
-
-``` text
-LOAD_ID
-CITY_NAME
-INGESTED_AT
-SOURCE_URL
-PAYLOAD
-```
-
-------------------------------------------------------------------------
-
-### 2. Metadata-driven ingestion
-
-Move API configuration into a control table:
-
-``` text
-SOURCE_NAME
-ENDPOINT
-CITY
-COUNTRY
-ACTIVE_FLAG
-```
-
-ADF can then become metadata-driven instead of hard-coded.
-
-------------------------------------------------------------------------
-
-### 3. Error handling
-
-Add:
-
--   Retry policies
--   Failure paths
--   Error logging
--   Dead-letter storage
--   Pipeline audit tables
--   Alerts
-
-------------------------------------------------------------------------
-
-### 4. Incremental processing
-
-Instead of processing the entire dataset every time, use:
-
-``` text
-INGESTION_TIMESTAMP
-LAST_SUCCESSFUL_RUN
-CITY
-```
-
-to control incremental processing.
-
-------------------------------------------------------------------------
-
-### 5. Data quality checks
-
-Validate:
-
--   Temperature ranges
--   Humidity ranges
--   Missing cities
--   Duplicate observations
--   Invalid API responses
--   Unexpected JSON structure
-
-------------------------------------------------------------------------
-
-### 6. Parallelism optimization
-
-ADF's `ForEach` activity can process cities in parallel.
-
-However, parallelism should be tuned carefully to avoid:
-
--   API throttling
--   Snowflake warehouse contention
--   Excessive storage requests
--   Unnecessary costs
-
-------------------------------------------------------------------------
-
-### 7. Observability
-
-A production solution should capture:
-
-``` text
-PIPELINE_RUN_ID
-CITY
-START_TIME
-END_TIME
-STATUS
-ROWS_PROCESSED
-ERROR_MESSAGE
-API_RESPONSE_STATUS
-```
-
-This allows operational monitoring and troubleshooting.
-
-------------------------------------------------------------------------
-
-# 💰 Cost Considerations
-
-This demo intentionally uses managed cloud services.
-
-Potential cost drivers include:
-
--   Azure Data Factory activity execution
--   Azure Storage capacity and transactions
--   Snowflake warehouse compute
--   Snowflake storage
--   Streamlit/Snowflake compute
--   API usage or rate limits
-
-For a learning project, use appropriately sized Snowflake warehouses and
-avoid leaving warehouses running unnecessarily.
 
 ------------------------------------------------------------------------
 
@@ -1210,52 +935,3 @@ parsing raw JSON.
 ```
 
 ------------------------------------------------------------------------
-
-## 👨‍💻 Author / Demo
-
-This repository is intended as a **hands-on cloud data engineering
-demonstration** showing how Azure Data Factory and Snowflake can be
-combined to build an API-driven, semi-structured data pipeline.
-
-The architecture can be extended to additional APIs, more complex
-transformations, data quality frameworks, metadata-driven ingestion,
-CI/CD, monitoring, and production-grade security.
-
-------------------------------------------------------------------------
-
-## ⭐ If you're using this as a learning project
-
-A recommended progression is:
-
-``` text
-Level 1
-API → ADF → Snowflake
-
-Level 2
-API → ADF → Snowflake RAW → TRANSFORMED
-
-Level 3
-API → ADF → Azure Storage + Snowflake
-
-Level 4
-Scheduled ingestion every 30 minutes
-
-Level 5
-Streamlit analytics dashboard
-
-Level 6
-Metadata-driven ingestion
-
-Level 7
-CI/CD + monitoring + data quality
-
-Level 8
-Production-grade security and governance
-```
-
-**End-to-end outcome:**
-
-> **Every 30 minutes, Azure Data Factory retrieves weather data for the
-> configured capital cities, preserves the raw JSON, transforms the
-> semi-structured payload in Snowflake, and makes the latest weather
-> information available through an interactive Streamlit dashboard.**
