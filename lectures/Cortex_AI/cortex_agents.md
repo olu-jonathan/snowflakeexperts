@@ -6,7 +6,7 @@ This tutorial walks through building a natural-language analytics workflow on th
 2. **Cortex Agent** -- an orchestrator that uses the semantic view (via Cortex Analyst) as a tool
 3. **Snowflake CoWork** -- the chat UI where business users ask questions in plain English
 
-The Agent can have several tools, we will also be adding a stored procedure as an additional tool.
+The Agent can have several tools, we will also be adding a *stored procedure* as an additional tool.
 
 ![alt text](image.png)
 
@@ -20,10 +20,10 @@ USE DATABASE GENERAL_DB;
 USE SCHEMA PUBLIC;
 ```
 
-Verify the source table exists:
+Load the file **sample_health_insurance.csv** into a table called **CLAIMS** and Verify the source table exists:
 
 ```sql
-SELECT COUNT(*) FROM GENERAL_DB.PUBLIC.CLAIMS;  -- ~586 rows
+SELECT COUNT(*) FROM GENERAL_DB.PUBLIC.CLAIMS;  
 ```
 
 ---
