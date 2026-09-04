@@ -109,7 +109,7 @@ A task can automate SQL execution on a schedule.
 
 ```sql
 CREATE TASK IF NOT EXISTS APPLE_DB.BRONZE.MENU_TASK
-    WAREHOUSE = COMPUTE_WH
+    WAREHOUSE = BOOTCAMP_COMPUTE_WH
     SCHEDULE = 'USING CRON 0 * * * * UTC'
 AS
     SELECT COUNT(*)
@@ -405,7 +405,7 @@ It also extracts up to seven ingredients from the nested ingredients array.
 ```sql
 CREATE DYNAMIC TABLE IF NOT EXISTS APPLE_DB.SILVER.MENU
 TARGET_LAG = '1 hour'
-WAREHOUSE = COMPUTE_WH
+WAREHOUSE = BOOTCAMP_COMPUTE_WH
 AS
 SELECT
     RAW_DATA:MENU_ID::NUMBER
@@ -716,7 +716,7 @@ Use a warehouse appropriate for BI workloads.
 For example:
 
 ```text
-COMPUTE_WH
+BOOTCAMP_COMPUTE_WH
 ```
 
 ### Database
