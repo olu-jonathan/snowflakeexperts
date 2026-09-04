@@ -267,11 +267,12 @@ CREATE TABLE IF NOT EXISTS APPLE_DB.BRONZE.MENU (
 ```
 ---
 
+
 ```sql
 CREATE STAGE IF NOT EXISTS 
 bronze.ext_stage 
 URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/' ;
----
+```
 
 ---
 
