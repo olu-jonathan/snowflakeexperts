@@ -256,7 +256,7 @@ LIST @APPLE_DB.BRONZE.EXT_STAGE;
 
 ---
 
-## 5. Create the Bronze Menu Table
+## 5. Create the Bronze Menu Table and a stage
 
 Because the source Parquet data contains semi-structured menu information, we can initially store the record as a single `VARIANT` column.
 
@@ -265,6 +265,12 @@ CREATE TABLE IF NOT EXISTS APPLE_DB.BRONZE.MENU (
     RAW_DATA VARIANT
 );
 ```
+
+```sql
+CREATE STAGE IF NOT EXISTS 
+bronze.ext_stage 
+URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/' ;
+---
 
 ---
 
