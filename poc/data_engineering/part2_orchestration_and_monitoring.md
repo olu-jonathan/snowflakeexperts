@@ -5,37 +5,37 @@
 In Part 1, we built the core pipeline:
 
 ```text
-S3 Parquet
-    ↓
-BRONZE.MENU
-    ↓
-SILVER.MENU  (Dynamic Table)
-    ↓
-GOLD views
-    ↓
-Power BI
+            S3 Parquet
+                ↓
+            BRONZE.MENU
+                ↓
+    SILVER.MENU  (Dynamic Table)
+                ↓
+            GOLD views
+                ↓
+            Power BI
 ```
 
 In Part 2, we add orchestration and monitoring so the pipeline can respond to new Bronze data.
 
 ```text
-New data
-   ↓
-BRONZE.MENU
-   ↓
-BRONZE.MENU_STREAM
-   ↓
-Triggered parent task
-   ↓
-Refresh SILVER.MENU
-   ↓
-Child task
-   ↓
-Email current Bronze count
-   ↓
-Gold views
-   ↓
-Power BI
+            New data
+                ↓
+            BRONZE.MENU
+                ↓
+        BRONZE.MENU_STREAM
+                ↓
+        Triggered parent task
+                ↓
+        Refresh SILVER.MENU
+                ↓
+            Child task
+                ↓
+      Email current Bronze count
+                ↓
+            Gold views
+                ↓
+            Power BI
 ```
 
 > **Design note:** Dynamic Tables normally manage their own refresh timing through `TARGET_LAG`. For this exercise, we intentionally use an orchestrator-managed Dynamic Table with `SCHEDULER = DISABLE`, allowing a task to explicitly issue `ALTER DYNAMIC TABLE ... REFRESH`. Snowflake documents this as an orchestrator-managed pattern.
@@ -107,7 +107,6 @@ SELECT PARSE_JSON('
   "ITEM_CATEGORY": "Beverage",
   "ITEM_SUBCATEGORY": "Test",
   "MENU_ID": 99999,
-  "MENU_ITEM_HEALTH_METRICS_OBJ": "{"menu_item_health_metrics":[{"ingredients":["Test Beverage"],"is_dairy_free_flag":"Y","is_gluten_free_flag":"Y","is_healthy_flag":"Y","is_nut_free_flag":"Y"}],"menu_item_id":99999}",
   "MENU_ITEM_ID": 99999,
   "MENU_ITEM_NAME": "Test Beverage",
   "MENU_TYPE": "Test",
@@ -127,106 +126,7 @@ SELECT SYSTEM$STREAM_HAS_DATA(
 
 ---
 
-# SECTION 3 — PREPARE THE SILVER DYNAMIC TABLE
-
-For explicit task-controlled orchestration, configure the Dynamic Table with scheduling disabled.
-
-> If you already created the Part 1 Dynamic Table using `TARGET_LAG`, treat this section as the orchestrator-managed version of that design. In a production environment, make changes carefully and account for the existing object's state and dependencies.
-
-```sql
-CREATE DYNAMIC TABLE IF NOT EXISTS SILVER.MENU
-SCHEDULER = DISABLE
-WAREHOUSE = COMPUTE_WH
-REFRESH_MODE = INCREMENTAL
-AS
-SELECT
-    RAW_DATA:MENU_ID::NUMBER
-        AS MENU_ID,
-
-    RAW_DATA:MENU_ITEM_ID::NUMBER
-        AS MENU_ITEM_ID,
-
-    RAW_DATA:MENU_ITEM_NAME::VARCHAR
-        AS MENU_ITEM_NAME,
-
-    RAW_DATA:MENU_TYPE::VARCHAR
-        AS MENU_TYPE,
-
-    RAW_DATA:MENU_TYPE_ID::NUMBER
-        AS MENU_TYPE_ID,
-
-    RAW_DATA:TRUCK_BRAND_NAME::VARCHAR
-        AS TRUCK_BRAND_NAME,
-
-    RAW_DATA:ITEM_CATEGORY::VARCHAR
-        AS ITEM_CATEGORY,
-
-    RAW_DATA:ITEM_SUBCATEGORY::VARCHAR
-        AS ITEM_SUBCATEGORY,
-
-    RAW_DATA:SALE_PRICE_USD::NUMBER(10,2)
-        AS SALE_PRICE_USD,
-
-    RAW_DATA:COST_OF_GOODS_USD::NUMBER(10,2)
-        AS COST_OF_GOODS_USD,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[0]::VARCHAR
-        AS INGREDIENTS_1,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[1]::VARCHAR
-        AS INGREDIENTS_2,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[2]::VARCHAR
-        AS INGREDIENTS_3,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[3]::VARCHAR
-        AS INGREDIENTS_4,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[4]::VARCHAR
-        AS INGREDIENTS_5,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[5]::VARCHAR
-        AS INGREDIENTS_6,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:ingredients[6]::VARCHAR
-        AS INGREDIENTS_7,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:is_dairy_free_flag::VARCHAR
-        AS IS_DAIRY_FREE_FLAG,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:is_gluten_free_flag::VARCHAR
-        AS IS_GLUTEN_FREE_FLAG,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:is_healthy_flag::VARCHAR
-        AS IS_HEALTHY_FLAG,
-
-    TRY_PARSE_JSON(
-        RAW_DATA:MENU_ITEM_HEALTH_METRICS_OBJ::VARCHAR
-    ):menu_item_health_metrics[0]:is_nut_free_flag::VARCHAR
-        AS IS_NUT_FREE_FLAG
-
-FROM BRONZE.MENU;
-```
+# SECTION 3 — VERIFY YOUR DYNAMIC TABLE
 
 Verify:
 
@@ -258,29 +158,34 @@ SILVER.MENU
 Create it:
 
 ```sql
-CREATE TASK IF NOT EXISTS BRONZE.MENU_REFRESH_TASK
-    WAREHOUSE = COMPUTE_WH
+CREATE or replace TASK  BRONZE.MENU_REFRESH_TASK
+    WAREHOUSE = BOOTCAMP_COMPUTE_WH
     WHEN SYSTEM$STREAM_HAS_DATA(
         'BRONZE.MENU_STREAM'
     )
 AS
-    ALTER DYNAMIC TABLE SILVER.MENU REFRESH;
+--refresh the Dynamic table and empty the stream
+EXECUTE IMMEDIATE $$
+BEGIN
+
+ALTER DYNAMIC TABLE SILVER.MENU REFRESH;
+
+CREATE temp table if not exists BRONZE.STREAM_FLUSHED
+like bronze.menu;  
+
+INSERT INTO BRONZE.STREAM_FLUSHED
+SELECT raw_data FROM BRONZE.MENU_STREAM;  
+
+END;
+$$;
+
 ```
 
 A triggered task uses `WHEN SYSTEM$STREAM_HAS_DATA(...)` and runs when change data is detected.
 
 ---
 
-## 2. Start the Task
-
-New tasks are suspended by default.
-
-```sql
-ALTER TASK BRONZE.MENU_REFRESH_TASK
-RESUME;
-```
-
-Check it:
+## 2. Check it
 
 ```sql
 SHOW TASKS
@@ -295,7 +200,7 @@ IN SCHEMA BRONZE;
 
 Snowflake's `SYSTEM$SEND_EMAIL()` requires an email notification integration.
 
-Your administrator has created one for you titled my_email_int
+Your administrator has created one for you titled **my_email_int**
 
 Check the integration:
 
@@ -303,7 +208,10 @@ Check the integration:
 SHOW NOTIFICATION INTEGRATIONS;
 ```
 
-Email recipients must satisfy Snowflake's notification requirements, including email verification where applicable.
+Email recipients must satisfy Snowflake's notification requirements, including email verification.
+To verify, click on your username at the bottom left of snowsight, then select **settings**
+
+![alt text](image-1.png)
 
 ---
 
@@ -316,7 +224,7 @@ CALL SYSTEM$SEND_EMAIL(
     'MY_EMAIL_INT',
     'your.email@example.com',
     'Snowflake Email Test',
-    'The Snowflake email notification integration is working.'
+    'The Bootcamp email notification integration is working.'
 );
 ```
 
@@ -340,11 +248,11 @@ It will:
 The dependency is:
 
 ```text
-MENU_REFRESH_TASK
-        |
-        | AFTER
-        ↓
-MENU_EMAIL_TASK
+            MENU_REFRESH_TASK
+                    |
+                    | AFTER
+                    ↓
+            MENU_EMAIL_TASK
 ```
 
 ---
@@ -353,7 +261,7 @@ MENU_EMAIL_TASK
 
 ```sql
 CREATE TASK IF NOT EXISTS BRONZE.MENU_EMAIL_TASK
-    WAREHOUSE = COMPUTE_WH
+    WAREHOUSE = BOOTCAMP_COMPUTE_WH
     AFTER BRONZE.MENU_REFRESH_TASK
 AS
     CALL SYSTEM$SEND_EMAIL(
@@ -368,10 +276,13 @@ AS
 
 ---
 
-## 3. Resume the Child Task
+## 3. Resume both parent and Child Tasks
 
 ```sql
 ALTER TASK BRONZE.MENU_EMAIL_TASK
+RESUME;
+
+ALTER TASK BRONZE.MENU_REFRESH_TASK
 RESUME;
 ```
 
@@ -383,6 +294,7 @@ MENU_REFRESH_TASK
         +---- SUCCESS ----> MENU_EMAIL_TASK
 ```
 
+![alt text](image.png)
 ---
 
 # SECTION 8 — TEST THE COMPLETE PIPELINE
@@ -450,17 +362,7 @@ ORDER BY SCHEDULED_TIME DESC;
 
 ---
 
-## Step 5 — Verify the Silver Dynamic Table
-
-```sql
-SELECT *
-FROM SILVER.MENU
-WHERE MENU_ITEM_ID = 100000;
-```
-
----
-
-## Step 6 — Monitor the Child Task
+## Step 5 — Monitor the Child Task
 
 ```sql
 SELECT
@@ -590,92 +492,23 @@ Power BI queries Snowflake when the report requests data, subject to the Power B
 Therefore the logical flow is:
 
 ```text
-New Bronze Data
-      ↓
-Stream
-      ↓
-Task
-      ↓
-Dynamic Table
-      ↓
-Gold View
-      ↓
-Power BI Query
+            New Bronze Data
+                ↓
+            Stream
+                ↓
+            Task
+                ↓
+            Dynamic Table
+                ↓
+            Gold View
+                ↓
+            Power BI Query
 ```
 
 ---
 
-# SECTION 11 — COMPLETE ARCHITECTURE
 
-```text
-                         S3
-                          |
-                          v
-                 +----------------+
-                 |   EXT_STAGE    |
-                 +----------------+
-                          |
-                      COPY INTO
-                          |
-                          v
-                 +----------------+
-                 |  BRONZE.MENU   |
-                 |    VARIANT     |
-                 +----------------+
-                          |
-                          v
-                 +----------------+
-                 |  MENU_STREAM   |
-                 |      CDC       |
-                 +----------------+
-                          |
-              SYSTEM$STREAM_HAS_DATA()
-                          |
-                          v
-                 +--------------------+
-                 | MENU_REFRESH_TASK  |
-                 |    PARENT TASK     |
-                 +--------------------+
-                          |
-             ALTER DYNAMIC TABLE
-                    ... REFRESH
-                          |
-                          v
-                 +----------------+
-                 |  SILVER.MENU   |
-                 | Dynamic Table  |
-                 +----------------+
-                          |
-                          v
-                 +----------------+
-                 |   GOLD VIEWS   |
-                 +----------------+
-                          |
-                          v
-                 +----------------+
-                 |    POWER BI    |
-                 +----------------+
-
-                          +
-                          |
-                       AFTER
-                          |
-                          v
-                 +----------------+
-                 | MENU_EMAIL_TASK|
-                 |   CHILD TASK   |
-                 +----------------+
-                          |
-                          v
-                 SYSTEM$SEND_EMAIL()
-                          |
-                          v
-                       EMAIL
-```
-
----
-
-# SECTION 12 — WHY THIS PATTERN IS USEFUL
+# SECTION 11 — WHY THIS PATTERN IS USEFUL
 
 This exercise demonstrates several important Snowflake capabilities working together.
 
@@ -727,7 +560,7 @@ MONITOR
 
 ---
 
-# SECTION 13 — IMPORTANT PRODUCTION CONSIDERATIONS
+# SECTION 12 — IMPORTANT PRODUCTION CONSIDERATIONS
 
 ## 1. Dynamic Tables Can Self-Refresh
 
@@ -791,7 +624,7 @@ For a production implementation, you could expand this to include:
 
 ---
 
-# SECTION 14 — FINAL CHECKLIST
+# SECTION 13 — FINAL CHECKLIST
 
 At the end of Part 2, you should have:
 
@@ -838,7 +671,7 @@ POWER BI
 
 ---
 
-# SECTION 15 — THE BIG PICTURE
+# SECTION 14 — THE BIG PICTURE
 
 The key lesson is that Snowflake can provide much more than data storage.
 
@@ -878,3 +711,15 @@ The resulting pattern is:
 ```
 
 This is the foundation for expanding the project into a production-style Snowflake data engineering solution using Snowpipe, additional task graphs, data quality checks, alerts, APIs, dbt, CI/CD, and more sophisticated observability.
+
+---
+
+# SECTION 14 — CLEAN UP
+To clean up all resources created
+
+```sql
+DROP SCHEMA IF EXISTS BRONZE;
+DROP SCHEMA IF EXISTS SILVER;
+DROP SCHEMA IF EXISTS GOLD;
+```
+
