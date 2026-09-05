@@ -49,7 +49,7 @@ CREATE DATABASE IF NOT EXISTS APPLE_DB;
 ### Schema
 
 ```sql
-CREATE SCHEMA IF NOT EXISTS APPLE_DB.BRONZE;
+CREATE SCHEMA IF NOT EXISTS BRONZE;
 ```
 
 ### Table
@@ -57,7 +57,7 @@ CREATE SCHEMA IF NOT EXISTS APPLE_DB.BRONZE;
 A simple table can be created to hold raw menu records. Because the source is semi-structured JSON/Parquet, a single `VARIANT` column is a useful Bronze-layer design.
 
 ```sql
-CREATE TABLE IF NOT EXISTS APPLE_DB.BRONZE.MENU (
+CREATE TABLE IF NOT EXISTS BRONZE.MENU (
     RAW_DATA VARIANT
 );
 ```
@@ -67,14 +67,14 @@ CREATE TABLE IF NOT EXISTS APPLE_DB.BRONZE.MENU (
 A view exposes selected attributes from the raw menu data without creating another physical copy of the data.
 
 ```sql
-CREATE VIEW IF NOT EXISTS APPLE_DB.BRONZE.MENU_VW AS
+CREATE VIEW IF NOT EXISTS BRONZE.MENU_VW AS
 SELECT
     RAW_DATA:MENU_ID::NUMBER              AS MENU_ID,
     RAW_DATA:MENU_ITEM_ID::NUMBER         AS MENU_ITEM_ID,
     RAW_DATA:MENU_ITEM_NAME::VARCHAR      AS MENU_ITEM_NAME,
     RAW_DATA:ITEM_CATEGORY::VARCHAR       AS ITEM_CATEGORY,
     RAW_DATA:SALE_PRICE_USD::NUMBER(10,2) AS SALE_PRICE_USD
-FROM APPLE_DB.BRONZE.MENU;
+FROM BRONZE.MENU;
 ```
 
 ### Stage
@@ -82,7 +82,7 @@ FROM APPLE_DB.BRONZE.MENU;
 A stage points Snowflake to a location containing files that can be loaded or unloaded.
 
 ```sql
-CREATE STAGE IF NOT EXISTS APPLE_DB.BRONZE.EXT_STAGE;
+CREATE STAGE IF NOT EXISTS BRONZE.EXT_STAGE;
 ```
 
 ### File Format
@@ -90,7 +90,7 @@ CREATE STAGE IF NOT EXISTS APPLE_DB.BRONZE.EXT_STAGE;
 A file format defines how Snowflake interprets a particular file type.
 
 ```sql
-CREATE FILE FORMAT IF NOT EXISTS APPLE_DB.BRONZE.PARQUET_FORMAT
+CREATE FILE FORMAT IF NOT EXISTS BRONZE.PARQUET_FORMAT
     TYPE = PARQUET;
 ```
 
@@ -99,8 +99,8 @@ CREATE FILE FORMAT IF NOT EXISTS APPLE_DB.BRONZE.PARQUET_FORMAT
 A stream records changes made to a table so that downstream processing can identify new or changed records.
 
 ```sql
-CREATE STREAM IF NOT EXISTS APPLE_DB.BRONZE.MENU_STREAM
-    ON TABLE APPLE_DB.BRONZE.MENU;
+CREATE STREAM IF NOT EXISTS BRONZE.MENU_STREAM
+    ON TABLE BRONZE.MENU;
 ```
 
 ### Task
@@ -108,12 +108,12 @@ CREATE STREAM IF NOT EXISTS APPLE_DB.BRONZE.MENU_STREAM
 A task can automate SQL execution on a schedule.
 
 ```sql
-CREATE TASK IF NOT EXISTS APPLE_DB.BRONZE.MENU_TASK
+CREATE TASK IF NOT EXISTS BRONZE.MENU_TASK
     WAREHOUSE = BOOTCAMP_COMPUTE_WH
     SCHEDULE = 'USING CRON 0 * * * * UTC'
 AS
     SELECT COUNT(*)
-    FROM APPLE_DB.BRONZE.MENU;
+    FROM BRONZE.MENU;
 ```
 
 > **Note:** Creating a task does not automatically start it. Use `ALTER TASK ... RESUME` after reviewing the task definition and dependencies.
@@ -233,7 +233,7 @@ The Gold layer is generally the layer consumed by BI and analytics applications.
 ```sql
 CREATE DATABASE IF NOT EXISTS APPLE_DB;
 
-CREATE SCHEMA IF NOT EXISTS APPLE_DB.BRONZE;
+CREATE SCHEMA IF NOT EXISTS BRONZE;
 ```
 
 ---
@@ -243,7 +243,7 @@ CREATE SCHEMA IF NOT EXISTS APPLE_DB.BRONZE;
 The following stage points to the Snowflake quickstart data stored in Amazon S3.
 
 ```sql
-CREATE STAGE IF NOT EXISTS APPLE_DB.BRONZE.EXT_STAGE
+CREATE STAGE IF NOT EXISTS BRONZE.EXT_STAGE
 URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/'
 ;
 ```
@@ -251,7 +251,7 @@ URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/'
 You can inspect the files available in the stage with:
 
 ```sql
-LIST @APPLE_DB.BRONZE.EXT_STAGE;
+LIST @BRONZE.EXT_STAGE;
 ```
 
 ---
@@ -261,7 +261,7 @@ LIST @APPLE_DB.BRONZE.EXT_STAGE;
 Because the source Parquet data contains semi-structured menu information, we can initially store the record as a single `VARIANT` column.
 
 ```sql
-CREATE TABLE IF NOT EXISTS APPLE_DB.BRONZE.MENU (
+CREATE TABLE IF NOT EXISTS BRONZE.MENU (
     RAW_DATA VARIANT
 );
 ```
@@ -281,7 +281,7 @@ URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/' ;
 Load the Parquet file into the Bronze table.
 
 ```sql
-COPY INTO APPLE_DB.BRONZE.MENU
+COPY INTO BRONZE.MENU
 FROM '@"APPLE_DB"."BRONZE"."EXT_STAGE"/pos/menu/menu.snappy.parquet'
 FILE_FORMAT = (
     TYPE = PARQUET
@@ -292,7 +292,7 @@ Verify the loaded data:
 
 ```sql
 SELECT *
-FROM APPLE_DB.BRONZE.MENU
+FROM BRONZE.MENU
 LIMIT 10;
 ```
 
@@ -301,7 +301,7 @@ Inspect the JSON structure:
 ```sql
 SELECT
     RAW_DATA
-FROM APPLE_DB.BRONZE.MENU
+FROM BRONZE.MENU
 LIMIT 1;
 ```
 
@@ -342,7 +342,7 @@ SELECT
     RAW_DATA:TRUCK_BRAND_NAME::VARCHAR     AS TRUCK_BRAND_NAME,
     RAW_DATA:SALE_PRICE_USD::NUMBER(10,2)  AS SALE_PRICE_USD,
     RAW_DATA:COST_OF_GOODS_USD::NUMBER(10,2) AS COST_OF_GOODS_USD
-FROM APPLE_DB.BRONZE.MENU;
+FROM BRONZE.MENU;
 ```
 
 ---
@@ -397,7 +397,7 @@ Because the nested object is stored as a string, use `TRY_PARSE_JSON()` before n
 ## 9. Create the Silver Schema
 
 ```sql
-CREATE SCHEMA IF NOT EXISTS APPLE_DB.SILVER;
+CREATE SCHEMA IF NOT EXISTS SILVER;
 ```
 
 ---
@@ -411,7 +411,7 @@ The following example transforms the raw menu data into a relational Silver stru
 It also extracts up to seven ingredients from the nested ingredients array.
 
 ```sql
-CREATE DYNAMIC TABLE IF NOT EXISTS APPLE_DB.SILVER.MENU
+CREATE DYNAMIC TABLE IF NOT EXISTS SILVER.MENU
 TARGET_LAG = '1 hour'
 WAREHOUSE = BOOTCAMP_COMPUTE_WH
 AS
@@ -501,21 +501,21 @@ SELECT
     ):menu_item_health_metrics[0]:is_nut_free_flag::VARCHAR
         AS IS_NUT_FREE_FLAG
 
-FROM APPLE_DB.BRONZE.MENU;
+FROM BRONZE.MENU;
 ```
 
 ### Verify the Dynamic Table
 
 ```sql
 SELECT *
-FROM APPLE_DB.SILVER.MENU
+FROM SILVER.MENU
 LIMIT 20;
 ```
 
 You can also inspect the Dynamic Table definition:
 
 ```sql
-DESC DYNAMIC TABLE APPLE_DB.SILVER.MENU;
+DESC DYNAMIC TABLE SILVER.MENU;
 ```
 
 ---
@@ -548,7 +548,7 @@ This reduces the need to repeatedly execute the same transformation manually and
 The Gold layer will contain business-friendly analytical views.
 
 ```sql
-CREATE SCHEMA IF NOT EXISTS APPLE_DB.GOLD;
+CREATE SCHEMA IF NOT EXISTS GOLD;
 ```
 
 ---
@@ -558,7 +558,7 @@ CREATE SCHEMA IF NOT EXISTS APPLE_DB.GOLD;
 This view calculates revenue, estimated cost, and gross profit per menu item.
 
 ```sql
-CREATE VIEW IF NOT EXISTS APPLE_DB.GOLD.MENU_PROFITABILITY AS
+CREATE VIEW IF NOT EXISTS GOLD.MENU_PROFITABILITY AS
 SELECT
     MENU_ID,
     MENU_ITEM_ID,
@@ -595,7 +595,7 @@ SELECT
     INGREDIENTS_6,
     INGREDIENTS_7
 
-FROM APPLE_DB.SILVER.MENU;
+FROM SILVER.MENU;
 ```
 
 ---
@@ -605,7 +605,7 @@ FROM APPLE_DB.SILVER.MENU;
 This view summarizes the menu by category.
 
 ```sql
-CREATE VIEW IF NOT EXISTS APPLE_DB.GOLD.MENU_CATEGORY_SUMMARY AS
+CREATE VIEW IF NOT EXISTS GOLD.MENU_CATEGORY_SUMMARY AS
 SELECT
     ITEM_CATEGORY,
     COUNT(*) AS MENU_ITEM_COUNT,
@@ -626,7 +626,7 @@ SELECT
         2
     ) AS AVG_GROSS_MARGIN_PERCENT
 
-FROM APPLE_DB.SILVER.MENU
+FROM SILVER.MENU
 GROUP BY ITEM_CATEGORY;
 ```
 
@@ -635,7 +635,7 @@ GROUP BY ITEM_CATEGORY;
 ## 4. Create a Food Truck Summary View
 
 ```sql
-CREATE VIEW IF NOT EXISTS APPLE_DB.GOLD.TRUCK_SUMMARY AS
+CREATE VIEW IF NOT EXISTS GOLD.TRUCK_SUMMARY AS
 SELECT
     TRUCK_BRAND_NAME,
     COUNT(*) AS MENU_ITEM_COUNT,
@@ -656,7 +656,7 @@ SELECT
         2
     ) AS AVG_GROSS_MARGIN_PERCENT
 
-FROM APPLE_DB.SILVER.MENU
+FROM SILVER.MENU
 GROUP BY TRUCK_BRAND_NAME;
 ```
 
@@ -668,7 +668,7 @@ Run:
 
 ```sql
 SELECT *
-FROM APPLE_DB.GOLD.MENU_PROFITABILITY
+FROM GOLD.MENU_PROFITABILITY
 ORDER BY GROSS_PROFIT_USD DESC
 LIMIT 20;
 ```
@@ -677,7 +677,7 @@ Then:
 
 ```sql
 SELECT *
-FROM APPLE_DB.GOLD.MENU_CATEGORY_SUMMARY
+FROM GOLD.MENU_CATEGORY_SUMMARY
 ORDER BY AVG_GROSS_PROFIT_USD DESC;
 ```
 
@@ -685,7 +685,7 @@ And:
 
 ```sql
 SELECT *
-FROM APPLE_DB.GOLD.TRUCK_SUMMARY
+FROM GOLD.TRUCK_SUMMARY
 ORDER BY AVG_GROSS_PROFIT_USD DESC;
 ```
 
@@ -769,14 +769,14 @@ Select the Gold views.
 For the primary dashboard, start with:
 
 ```text
-APPLE_DB.GOLD.MENU_PROFITABILITY
+GOLD.MENU_PROFITABILITY
 ```
 
 and optionally add:
 
 ```text
-APPLE_DB.GOLD.MENU_CATEGORY_SUMMARY
-APPLE_DB.GOLD.TRUCK_SUMMARY
+GOLD.MENU_CATEGORY_SUMMARY
+GOLD.TRUCK_SUMMARY
 ```
 
 Use **Load** to import the data into Power BI, or **DirectQuery** when your reporting architecture requires queries to execute against Snowflake.
