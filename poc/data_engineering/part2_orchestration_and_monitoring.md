@@ -51,10 +51,10 @@ A Snowflake Stream provides change-data-capture information for a table.
 For this project:
 
 ```text
-BRONZE.MENU
+    BRONZE.MENU
           |
           v
-BRONZE.MENU_STREAM
+ BRONZE.MENU_STREAM
 ```
 
 When new records are inserted into `BRONZE.MENU`, the stream provides the change signal that can be used by a task.
