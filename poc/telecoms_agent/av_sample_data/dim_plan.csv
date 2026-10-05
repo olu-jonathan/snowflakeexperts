@@ -1,0 +1,4 @@
+plan_id,plan_name,list_price_cad,internet_bundle_price_cad,desk_phone_included,mobile_app_included,teams_integration_included,cad_us_long_distance_included,virtual_receptionist_included
+AV-BASIC,Advantage Voice Basic,26.0,20.0,True,False,False,True,True
+AV-REMOTE,Advantage Voice Remote,32.0,26.0,False,True,True,True,True
+AV-OFFICE,Advantage Voice Office,38.0,32.0,True,True,True,True,True

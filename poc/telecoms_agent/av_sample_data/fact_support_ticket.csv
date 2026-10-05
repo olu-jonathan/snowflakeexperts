@@ -1,0 +1,454 @@
+ticket_id,customer_id,seat_id,category,priority,channel,opened_ts,first_response_minutes,resolved_ts,ticket_status,resolution_hours,escalated_flag,csat_score
+T000001,C1024,,Call Quality,Medium,Phone,2026-04-01 12:09:00,24,2026-04-01 20:53:41.953688,Resolved,8.7,False,
+T000002,C1023,,Outage,Critical,Phone,2026-04-01 12:51:00,31,2026-04-01 23:15:35.490607,Resolved,10.4,False,5.0
+T000003,C1054,,Call Quality,Low,Phone,2026-04-01 15:20:00,35,2026-04-01 20:57:49.688250,Resolved,5.6,False,5.0
+T000004,C1031,,Call Quality,Medium,Phone,2026-04-01 15:35:00,21,2026-04-01 17:22:59.144547,Resolved,1.8,True,
+T000005,C1038,,Call Quality,Critical,Email,2026-04-02 10:54:00,107,2026-04-02 14:13:01.967982,Resolved,3.3,False,4.0
+T000006,C1001,,Outage,High,Portal,2026-04-03 08:27:00,70,2026-04-03 19:21:01.221763,Resolved,10.9,True,
+T000007,C1021,,Call Quality,Medium,Phone,2026-04-03 14:23:00,50,2026-04-03 20:26:44.568755,Resolved,6.1,True,5.0
+T000008,C1002,,Auto Attendant / Hunt Group Config,Medium,Phone,2026-04-03 15:30:00,47,2026-04-04 02:07:39.943783,Resolved,10.6,False,
+T000009,C1024,,Call Quality,Medium,Chat,2026-04-03 15:56:00,39,2026-04-04 12:04:10.555085,Resolved,20.1,False,4.0
+T000010,C1015,,Call Quality,Low,Chat,2026-04-04 12:34:00,83,2026-04-05 11:44:39.076887,Resolved,23.2,False,
+T000011,C1051,,Provisioning / Seat Changes,Low,Email,2026-04-04 14:53:00,7,2026-04-05 02:39:18.006352,Resolved,11.8,True,4.0
+T000012,C1003,,Provisioning / Seat Changes,Low,Phone,2026-04-04 16:52:00,49,2026-04-05 05:28:56.096556,Resolved,12.6,True,5.0
+T000013,C1031,,Number Porting,High,Phone,2026-04-04 17:42:00,22,2026-04-06 07:32:53.374223,Resolved,37.8,False,3.0
+T000014,C1018,,Number Porting,Medium,Phone,2026-04-05 09:16:00,52,2026-04-07 02:54:50.496364,Resolved,41.6,True,
+T000015,C1032,,Call Quality,High,Phone,2026-04-05 09:49:00,3,2026-04-05 13:19:47.650486,Resolved,3.5,False,
+T000016,C1038,,Call Quality,Medium,Phone,2026-04-05 16:59:00,39,2026-04-06 01:18:24.931421,Resolved,8.3,False,
+T000017,C1013,,Call Quality,Medium,Email,2026-04-06 13:24:00,57,2026-04-06 20:08:45.729595,Resolved,6.7,False,
+T000018,C1011,,Call Quality,Medium,Email,2026-04-06 13:28:00,8,2026-04-06 14:51:13.783492,Resolved,1.4,False,
+T000019,C1045,,Call Quality,Low,Portal,2026-04-06 15:38:00,70,2026-04-08 09:37:15.449567,Resolved,42.0,False,
+T000020,C1026,,Voicemail,Medium,Phone,2026-04-06 16:49:00,48,2026-04-07 06:42:28.101779,Resolved,13.9,False,4.0
+T000021,C1008,,Auto Attendant / Hunt Group Config,Medium,Phone,2026-04-07 08:36:00,58,2026-04-07 12:52:23.588571,Resolved,4.3,False,5.0
+T000022,C1050,,Call Quality,Medium,Phone,2026-04-07 08:37:00,38,2026-04-08 06:49:55.787972,Resolved,22.2,False,
+T000023,C1034,,Hardware / Desk Phone,Low,Portal,2026-04-07 09:26:00,42,2026-04-08 08:44:07.877077,Resolved,23.3,False,5.0
+T000024,C1040,,Outage,High,Email,2026-04-07 16:44:00,19,2026-04-07 20:55:15.651764,Resolved,4.2,False,5.0
+T000025,C1037,,Call Quality,Medium,Phone,2026-04-08 10:20:00,34,2026-04-08 15:02:59.757164,Resolved,4.7,False,3.0
+T000026,C1045,,Call Quality,Medium,Chat,2026-04-08 16:38:00,51,2026-04-09 00:48:23.787876,Resolved,8.2,False,4.0
+T000027,C1020,,Outage,Critical,Phone,2026-04-10 16:54:00,19,2026-04-10 17:12:00.000000,Resolved,0.3,False,3.0
+T000028,C1036,,Auto Attendant / Hunt Group Config,Low,Phone,2026-04-11 08:34:00,16,2026-04-12 05:21:52.536014,Resolved,20.8,False,3.0
+T000029,C1055,,Call Quality,Low,Phone,2026-04-11 09:48:00,21,2026-04-11 16:51:12.691765,Resolved,7.1,False,
+T000030,C1013,,Call Quality,Medium,Phone,2026-04-11 12:06:00,3,2026-04-12 00:55:21.350520,Resolved,12.8,False,5.0
+T000031,C1015,,Provisioning / Seat Changes,Critical,Chat,2026-04-12 09:25:00,36,2026-04-12 17:34:10.565380,Resolved,8.2,False,
+T000032,C1044,,Provisioning / Seat Changes,Critical,Phone,2026-04-12 11:37:00,95,2026-04-12 14:42:31.385925,Resolved,3.1,False,
+T000033,C1037,,Call Quality,Low,Phone,2026-04-12 11:58:00,43,2026-04-13 20:40:34.167421,Resolved,32.7,False,3.0
+T000034,C1015,,Call Quality,Medium,Phone,2026-04-13 09:24:00,23,2026-04-13 16:40:11.910754,Resolved,7.3,False,5.0
+T000035,C1003,,Call Quality,Medium,Phone,2026-04-13 12:48:00,4,2026-04-13 20:12:35.975176,Resolved,7.4,False,4.0
+T000036,C1045,,Hardware / Desk Phone,High,Phone,2026-04-14 17:45:00,7,2026-04-14 20:01:37.462074,Resolved,2.3,True,5.0
+T000037,C1055,,Call Quality,Medium,Email,2026-04-15 09:19:00,29,2026-04-16 01:05:35.587309,Resolved,15.8,False,3.0
+T000038,C1052,,Billing Inquiry,Medium,Chat,2026-04-15 15:19:00,2,2026-04-16 11:36:34.460380,Resolved,20.3,False,
+T000039,C1018,,Call Quality,Medium,Email,2026-04-15 15:37:00,7,2026-04-16 09:26:53.068470,Resolved,17.8,False,4.0
+T000040,C1027,,Voicemail,High,Email,2026-04-16 14:13:00,15,2026-04-16 20:26:32.944369,Resolved,6.2,False,
+T000041,C1008,,Hardware / Desk Phone,Medium,Portal,2026-04-17 11:13:00,19,2026-04-18 04:32:09.171680,Resolved,17.3,False,5.0
+T000042,C1031,,Call Quality,High,Portal,2026-04-18 11:40:00,22,2026-04-18 14:01:00.288822,Resolved,2.4,False,2.0
+T000043,C1042,,Voicemail,High,Phone,2026-04-18 13:31:00,20,2026-04-18 17:48:58.500139,Resolved,4.3,True,
+T000044,C1041,,Call Quality,Medium,Chat,2026-04-19 08:02:00,45,2026-04-19 12:23:37.048473,Resolved,4.4,False,4.0
+T000045,C1047,,Provisioning / Seat Changes,High,Phone,2026-04-19 10:17:00,22,2026-04-19 13:13:18.259659,Resolved,2.9,True,2.0
+T000046,C1005,,Call Quality,Medium,Portal,2026-04-19 11:14:00,48,2026-04-19 19:27:39.434907,Resolved,8.2,False,
+T000047,C1036,,Billing Inquiry,High,Email,2026-04-19 11:21:00,19,2026-04-19 17:33:17.986734,Resolved,6.2,False,4.0
+T000048,C1018,,Call Quality,Low,Portal,2026-04-19 14:20:00,16,2026-04-20 10:24:49.156762,Resolved,20.1,False,3.0
+T000049,C1051,,Teams Integration,Low,Portal,2026-04-19 16:29:00,57,2026-04-20 04:01:42.449257,Resolved,11.5,False,4.0
+T000050,C1044,,Call Quality,Medium,Phone,2026-04-19 17:21:00,13,2026-04-20 08:02:15.295932,Resolved,14.7,False,
+T000051,C1055,,Voicemail,Low,Phone,2026-04-20 10:59:00,11,2026-04-20 19:27:34.792925,Resolved,8.5,True,
+T000052,C1031,,Call Quality,High,Phone,2026-04-20 16:20:00,33,2026-04-20 19:11:34.321809,Resolved,2.9,False,4.0
+T000053,C1002,,Hardware / Desk Phone,High,Chat,2026-04-20 17:11:00,5,2026-04-21 03:17:46.485778,Resolved,10.1,True,
+T000054,C1048,,Outage,High,Email,2026-04-21 09:37:00,6,2026-04-21 16:42:40.639835,Resolved,7.1,False,2.0
+T000055,C1016,,Call Quality,Low,Email,2026-04-21 12:01:00,27,2026-04-22 07:15:18.787877,Resolved,19.2,False,4.0
+T000056,C1033,,Call Quality,High,Portal,2026-04-24 09:31:00,43,2026-04-24 11:34:14.138663,Resolved,2.1,False,
+T000057,C1012,,Hardware / Desk Phone,Medium,Phone,2026-04-25 10:00:00,44,2026-04-25 19:49:45.757402,Resolved,9.8,False,5.0
+T000058,C1009,,Auto Attendant / Hunt Group Config,Low,Phone,2026-04-25 12:36:00,21,2026-04-25 21:35:29.959195,Resolved,9.0,False,5.0
+T000059,C1033,,Provisioning / Seat Changes,High,Phone,2026-04-25 15:12:00,44,2026-04-25 18:45:00.824633,Resolved,3.6,False,
+T000060,C1023,,Provisioning / Seat Changes,Low,Phone,2026-04-25 17:07:00,25,2026-04-25 22:08:15.428929,Resolved,5.0,False,4.0
+T000061,C1016,,Number Porting,Low,Chat,2026-04-26 08:29:00,25,2026-04-30 04:39:22.998251,Resolved,92.2,False,
+T000062,C1054,,Hardware / Desk Phone,Medium,Portal,2026-04-26 12:13:00,35,2026-04-26 18:10:08.810316,Resolved,6.0,False,5.0
+T000063,C1042,,Auto Attendant / Hunt Group Config,Low,Portal,2026-04-26 12:54:00,25,2026-04-27 11:53:56.289553,Resolved,23.0,False,
+T000064,C1021,,Call Quality,High,Phone,2026-04-26 15:05:00,78,2026-04-26 20:27:54.688840,Resolved,5.4,False,
+T000065,C1017,,Provisioning / Seat Changes,Low,Phone,2026-04-26 16:09:00,35,2026-04-27 16:31:05.784930,Resolved,24.4,False,5.0
+T000066,C1028,,Call Quality,Medium,Phone,2026-04-26 17:59:00,11,2026-04-27 13:09:24.927256,Resolved,19.2,False,5.0
+T000067,C1006,,Hardware / Desk Phone,Low,Chat,2026-04-27 10:25:00,51,2026-04-28 05:30:02.132302,Resolved,19.1,False,4.0
+T000068,C1002,,Call Quality,High,Portal,2026-04-27 13:27:00,46,2026-04-27 14:25:02.886179,Resolved,1.0,False,
+T000069,C1024,,Outage,Critical,Phone,2026-04-27 13:37:00,33,2026-04-27 19:04:12.770473,Resolved,5.5,False,3.0
+T000070,C1037,,Call Quality,Medium,Phone,2026-04-28 09:29:00,15,2026-04-28 20:23:58.063590,Resolved,10.9,False,3.0
+T000071,C1027,,Outage,Critical,Chat,2026-04-28 12:47:00,21,2026-04-28 18:15:01.926809,Resolved,5.5,False,4.0
+T000072,C1001,,Call Quality,Low,Portal,2026-04-28 14:39:00,9,2026-04-30 05:18:53.048742,Resolved,38.7,False,4.0
+T000073,C1033,,Call Quality,Critical,Phone,2026-04-29 11:45:00,13,2026-04-29 21:15:39.062519,Resolved,9.5,False,
+T000074,C1050,,Call Quality,Critical,Phone,2026-04-29 13:15:00,7,2026-04-29 15:13:16.102445,Resolved,2.0,True,3.0
+T000075,C1050,,Hardware / Desk Phone,Low,Email,2026-04-30 14:46:00,47,2026-05-01 08:19:06.389137,Resolved,17.6,True,
+T000076,C1051,,Call Quality,Medium,Email,2026-04-30 15:20:00,14,2026-05-01 06:34:11.622980,Resolved,15.2,False,
+T000077,C1017,,Auto Attendant / Hunt Group Config,Low,Phone,2026-04-30 16:58:00,71,2026-05-01 06:30:13.690602,Resolved,13.5,False,5.0
+T000078,C1017,,Call Quality,Medium,Email,2026-04-30 17:14:00,12,2026-04-30 23:15:00.653669,Resolved,6.0,False,3.0
+T000079,C1040,,Auto Attendant / Hunt Group Config,Low,Portal,2026-05-01 09:30:00,63,2026-05-01 15:50:06.716050,Resolved,6.3,False,
+T000080,C1012,,Call Quality,Low,Phone,2026-05-01 13:29:00,18,2026-05-01 14:27:01.389462,Resolved,1.0,False,4.0
+T000081,C1021,,Voicemail,Medium,Phone,2026-05-01 14:43:00,2,2026-05-01 20:48:18.194007,Resolved,6.1,False,
+T000082,C1032,,Voicemail,Medium,Phone,2026-05-01 17:06:00,62,2026-05-01 21:26:35.741644,Resolved,4.3,False,5.0
+T000083,C1003,,Hardware / Desk Phone,Medium,Portal,2026-05-02 10:08:00,49,2026-05-02 16:04:49.627011,Resolved,5.9,False,3.0
+T000084,C1007,,Voicemail,Medium,Phone,2026-05-03 12:23:00,23,2026-05-03 17:26:53.740260,Resolved,5.1,False,4.0
+T000085,C1054,,Call Quality,Low,Portal,2026-05-03 12:38:00,17,2026-05-03 15:43:57.409108,Resolved,3.1,False,
+T000086,C1036,,Provisioning / Seat Changes,Medium,Chat,2026-05-03 16:15:00,44,2026-05-04 03:00:08.913277,Resolved,10.8,False,
+T000087,C1037,,Provisioning / Seat Changes,Medium,Portal,2026-05-04 08:43:00,7,2026-05-04 17:08:29.659907,Resolved,8.4,False,5.0
+T000088,C1014,,Outage,High,Email,2026-05-04 10:54:00,14,2026-05-04 16:36:56.528585,Resolved,5.7,False,
+T000089,C1007,,Provisioning / Seat Changes,Critical,Phone,2026-05-04 15:19:00,25,2026-05-04 19:33:39.674191,Resolved,4.2,False,3.0
+T000090,C1035,,Teams Integration,Medium,Portal,2026-05-05 11:38:00,16,2026-05-06 05:45:05.218918,Resolved,18.1,False,
+T000091,C1023,,Outage,High,Chat,2026-05-05 13:01:00,4,2026-05-06 04:45:25.511662,Resolved,15.7,True,2.0
+T000092,C1007,,Call Quality,High,Email,2026-05-05 14:20:00,14,2026-05-06 00:06:41.360119,Resolved,9.8,True,
+T000093,C1054,,Number Porting,Low,Portal,2026-05-06 12:55:00,16,2026-05-10 21:57:38.363525,Resolved,105.0,False,
+T000094,C1006,,Voicemail,High,Portal,2026-05-07 10:53:00,29,2026-05-07 23:29:06.001548,Resolved,12.6,False,5.0
+T000095,C1003,,Outage,High,Email,2026-05-07 15:54:00,17,2026-05-07 18:59:24.273623,Resolved,3.1,True,
+T000096,C1045,,Call Quality,Low,Phone,2026-05-07 16:23:00,36,2026-05-08 17:06:07.266714,Resolved,24.7,False,4.0
+T000097,C1035,,Teams Integration,High,Portal,2026-05-08 16:06:00,41,2026-05-08 20:19:32.621240,Resolved,4.2,True,3.0
+T000098,C1013,,Billing Inquiry,Medium,Phone,2026-05-09 11:33:00,15,2026-05-09 22:47:14.920210,Resolved,11.2,False,5.0
+T000099,C1017,,Call Quality,Low,Portal,2026-05-10 09:12:00,38,2026-05-11 08:17:29.854735,Resolved,23.1,False,
+T000100,C1021,,Hardware / Desk Phone,High,Email,2026-05-11 08:44:00,15,2026-05-11 12:56:40.926462,Resolved,4.2,True,3.0
+T000101,C1022,,Call Quality,Medium,Phone,2026-05-11 13:55:00,7,2026-05-11 21:04:43.006205,Resolved,7.2,False,4.0
+T000102,C1054,,Call Quality,Critical,Portal,2026-05-12 08:06:00,91,2026-05-12 09:26:34.515287,Resolved,1.3,True,5.0
+T000103,C1044,,Auto Attendant / Hunt Group Config,Low,Phone,2026-05-12 14:16:00,22,2026-05-13 15:20:29.244566,Resolved,25.1,False,5.0
+T000104,C1002,,Provisioning / Seat Changes,Medium,Phone,2026-05-13 12:34:00,19,2026-05-13 14:47:53.562827,Resolved,2.2,False,5.0
+T000105,C1033,,Call Quality,Medium,Phone,2026-05-14 12:06:00,35,2026-05-14 23:26:57.669093,Resolved,11.3,False,4.0
+T000106,C1026,,Call Quality,Low,Email,2026-05-15 11:34:00,27,2026-05-16 18:36:23.705355,Resolved,31.0,False,5.0
+T000107,C1013,,Call Quality,High,Email,2026-05-15 16:10:00,38,2026-05-16 03:45:02.005657,Resolved,11.6,False,
+T000108,C1054,,Call Quality,Medium,Email,2026-05-16 11:57:00,26,2026-05-17 00:51:59.989674,Resolved,12.9,False,4.0
+T000109,C1014,,Number Porting,Low,Email,2026-05-16 12:26:00,55,2026-05-18 15:23:41.650310,Resolved,51.0,False,
+T000110,C1036,,Outage,High,Chat,2026-05-16 12:40:00,23,2026-05-16 14:16:59.093929,Resolved,1.6,True,
+T000111,C1028,,Call Quality,Medium,Chat,2026-05-16 14:04:00,16,2026-05-17 03:10:58.351115,Resolved,13.1,False,4.0
+T000112,C1038,,Call Quality,High,Phone,2026-05-17 09:24:00,101,2026-05-17 16:21:29.596762,Resolved,7.0,False,
+T000113,C1026,,Call Quality,Low,Email,2026-05-17 15:16:00,31,2026-05-17 16:54:39.771576,Resolved,1.6,False,5.0
+T000114,C1002,,Call Quality,Low,Chat,2026-05-18 08:55:00,12,2026-05-19 21:48:22.663221,Resolved,36.9,False,4.0
+T000115,C1050,,Call Quality,High,Chat,2026-05-20 08:55:00,57,2026-05-20 16:58:01.304487,Resolved,8.1,True,2.0
+T000116,C1042,,Hardware / Desk Phone,Low,Email,2026-05-20 09:22:00,59,2026-05-20 23:22:32.333813,Resolved,14.0,False,5.0
+T000117,C1005,,Provisioning / Seat Changes,High,Email,2026-05-20 14:33:00,24,2026-05-20 17:07:23.662728,Resolved,2.6,False,3.0
+T000118,C1052,,Call Quality,Medium,Email,2026-05-21 10:41:00,19,2026-05-21 21:46:44.024461,Resolved,11.1,False,
+T000119,C1032,,Call Quality,Critical,Email,2026-05-21 12:09:00,17,2026-05-21 18:43:53.586592,Resolved,6.6,False,5.0
+T000120,C1022,,Outage,High,Email,2026-05-21 12:59:00,18,2026-05-21 14:36:52.657042,Resolved,1.6,True,
+T000121,C1012,,Call Quality,High,Portal,2026-05-21 13:02:00,16,2026-05-21 20:45:38.208401,Resolved,7.7,True,
+T000122,C1026,,Call Quality,Medium,Portal,2026-05-21 14:26:00,29,2026-05-21 23:35:38.464743,Resolved,9.2,False,
+T000123,C1030,,Call Quality,Low,Email,2026-05-22 09:54:00,6,2026-05-22 18:53:13.184759,Resolved,9.0,False,
+T000124,C1054,,Hardware / Desk Phone,High,Phone,2026-05-22 12:40:00,35,2026-05-22 14:37:50.074888,Resolved,2.0,True,3.0
+T000125,C1052,,Call Quality,Low,Portal,2026-05-23 11:21:00,62,2026-05-23 17:21:09.266167,Resolved,6.0,False,3.0
+T000126,C1004,,Auto Attendant / Hunt Group Config,Low,Phone,2026-05-23 12:09:00,84,2026-05-23 16:06:33.847653,Resolved,4.0,False,5.0
+T000127,C1037,,Teams Integration,Medium,Email,2026-05-23 14:01:00,115,2026-05-24 04:05:09.791570,Resolved,14.1,False,
+T000128,C1016,,Call Quality,Medium,Phone,2026-05-23 16:04:00,35,2026-05-24 01:07:51.921701,Resolved,9.1,False,4.0
+T000129,C1008,,Hardware / Desk Phone,Low,Phone,2026-05-24 09:48:00,38,2026-05-24 18:57:47.228449,Resolved,9.2,False,
+T000130,C1012,,Call Quality,Medium,Email,2026-05-24 10:43:00,49,2026-05-25 03:41:27.221176,Resolved,17.0,False,3.0
+T000131,C1025,,Provisioning / Seat Changes,Low,Phone,2026-05-24 15:57:00,38,2026-05-26 06:44:06.949122,Resolved,38.8,False,5.0
+T000132,C1003,,Call Quality,Critical,Phone,2026-05-25 08:28:00,34,2026-05-25 08:53:55.368690,Resolved,0.4,False,
+T000133,C1044,,Outage,High,Portal,2026-05-25 09:11:00,33,2026-05-26 05:39:54.713220,Resolved,20.5,False,
+T000134,C1001,,Outage,Critical,Chat,2026-05-25 14:24:00,11,2026-05-25 23:50:40.181300,Resolved,9.4,True,
+T000135,C1044,,Teams Integration,Low,Phone,2026-05-25 16:50:00,74,2026-05-25 19:08:31.333622,Resolved,2.3,False,5.0
+T000136,C1037,,Call Quality,Low,Email,2026-05-26 09:39:00,93,2026-05-26 19:23:09.431497,Resolved,9.7,False,
+T000137,C1052,,Outage,Critical,Phone,2026-05-26 10:42:00,25,2026-05-26 12:06:09.479831,Resolved,1.4,False,
+T000138,C1039,,Voicemail,Medium,Email,2026-05-26 14:55:00,6,2026-05-26 23:27:37.308089,Resolved,8.5,True,
+T000139,C1009,,Call Quality,High,Portal,2026-05-27 09:14:00,17,2026-05-27 15:11:38.595911,Resolved,6.0,True,3.0
+T000140,C1055,,Hardware / Desk Phone,High,Portal,2026-05-27 12:20:00,12,2026-05-27 18:40:23.519614,Resolved,6.3,False,
+T000141,C1052,,Call Quality,High,Portal,2026-05-27 12:54:00,19,2026-05-27 19:20:40.578310,Resolved,6.4,False,2.0
+T000142,C1030,,Call Quality,Low,Phone,2026-05-27 16:10:00,14,2026-05-28 11:38:37.330945,Resolved,19.5,False,3.0
+T000143,C1054,,Billing Inquiry,Medium,Portal,2026-05-27 17:47:00,30,2026-05-28 03:07:15.983340,Resolved,9.3,True,4.0
+T000144,C1055,,Teams Integration,Medium,Email,2026-05-28 08:43:00,48,2026-05-28 18:12:05.130657,Resolved,9.5,False,
+T000145,C1029,,Call Quality,Low,Portal,2026-05-28 15:29:00,89,2026-05-28 21:02:19.332816,Resolved,5.6,False,4.0
+T000146,C1021,,Call Quality,Medium,Portal,2026-05-28 16:14:00,19,2026-05-28 18:51:31.882469,Resolved,2.6,False,
+T000147,C1054,,Number Porting,Low,Phone,2026-05-29 08:14:00,28,2026-06-02 18:27:43.599974,Resolved,106.2,True,5.0
+T000148,C1028,,Teams Integration,Medium,Chat,2026-05-29 10:32:00,27,2026-05-29 21:35:26.065703,Resolved,11.1,False,4.0
+T000149,C1051,,Call Quality,Medium,Portal,2026-05-29 15:26:00,10,2026-05-30 04:14:45.703949,Resolved,12.8,False,
+T000150,C1034,,Auto Attendant / Hunt Group Config,Medium,Portal,2026-05-29 16:47:00,28,2026-05-30 05:57:58.258853,Resolved,13.2,False,5.0
+T000151,C1054,,Outage,Critical,Portal,2026-05-30 08:13:00,38,2026-05-30 13:37:05.350170,Resolved,5.4,False,3.0
+T000152,C1036,,Call Quality,High,Phone,2026-05-30 11:00:00,47,2026-05-30 17:23:43.597493,Resolved,6.4,False,4.0
+T000153,C1038,,Call Quality,Low,Phone,2026-05-30 12:35:00,28,2026-06-01 07:17:30.937391,Resolved,42.7,False,
+T000154,C1040,,Outage,Critical,Chat,2026-05-30 13:44:00,4,2026-05-30 16:25:51.000070,Resolved,2.7,True,4.0
+T000155,C1015,,Auto Attendant / Hunt Group Config,High,Portal,2026-05-30 17:02:00,18,2026-05-30 21:54:47.643624,Resolved,4.9,True,
+T000156,C1048,,Teams Integration,Low,Portal,2026-05-30 17:03:00,25,2026-05-30 23:49:31.931482,Resolved,6.8,False,4.0
+T000157,C1020,,Call Quality,Medium,Email,2026-05-31 09:50:00,47,2026-05-31 19:39:46.140573,Resolved,9.8,False,4.0
+T000158,C1006,,Hardware / Desk Phone,Low,Email,2026-05-31 11:37:00,26,2026-06-01 18:50:00.732984,Resolved,31.2,False,5.0
+T000159,C1047,,Call Quality,Low,Email,2026-05-31 13:10:00,63,2026-05-31 13:53:56.938462,Resolved,0.7,False,5.0
+T000160,C1003,,Billing Inquiry,High,Phone,2026-05-31 15:27:00,78,2026-06-01 07:53:25.291362,Resolved,16.4,False,5.0
+T000161,C1004,,Outage,Critical,Chat,2026-06-01 14:40:00,11,2026-06-01 15:28:26.810756,Resolved,0.8,False,4.0
+T000162,C1024,,Call Quality,Medium,Phone,2026-06-02 13:23:00,36,2026-06-02 20:33:56.214219,Resolved,7.2,False,5.0
+T000163,C1013,,Teams Integration,Medium,Chat,2026-06-02 17:41:00,144,2026-06-03 03:50:51.281175,Resolved,10.2,False,
+T000164,C1047,,Teams Integration,High,Phone,2026-06-03 10:59:00,15,2026-06-03 14:39:13.642050,Resolved,3.7,False,
+T000165,C1035,,Call Quality,High,Portal,2026-06-03 14:17:00,100,2026-06-03 17:44:34.675121,Resolved,3.5,False,
+T000166,C1018,,Billing Inquiry,Medium,Portal,2026-06-04 14:03:00,28,2026-06-05 09:10:46.280674,Resolved,19.1,False,4.0
+T000167,C1022,,Call Quality,High,Chat,2026-06-04 14:46:00,16,2026-06-04 20:55:54.271562,Resolved,6.2,True,4.0
+T000168,C1015,,Billing Inquiry,Critical,Portal,2026-06-05 09:36:00,32,2026-06-05 12:58:34.140040,Resolved,3.4,False,4.0
+T000169,C1034,,Number Porting,Low,Phone,2026-06-05 10:01:00,15,2026-06-07 09:23:48.892937,Resolved,47.4,False,3.0
+T000170,C1036,,Call Quality,Medium,Email,2026-06-05 16:26:00,4,2026-06-05 19:55:22.754922,Resolved,3.5,False,
+T000171,C1052,,Provisioning / Seat Changes,Medium,Email,2026-06-06 09:45:00,18,2026-06-07 00:45:10.067435,Resolved,15.0,False,
+T000172,C1010,,Hardware / Desk Phone,High,Portal,2026-06-06 15:07:00,52,2026-06-06 19:34:29.471912,Resolved,4.5,False,
+T000173,C1004,,Call Quality,Medium,Phone,2026-06-07 08:20:00,17,2026-06-07 22:11:13.927632,Resolved,13.9,False,5.0
+T000174,C1006,,Call Quality,Medium,Portal,2026-06-07 11:55:00,23,2026-06-07 14:19:54.724052,Resolved,2.4,False,
+T000175,C1004,,Outage,High,Chat,2026-06-08 09:26:00,52,2026-06-08 19:22:24.258743,Resolved,9.9,False,3.0
+T000176,C1038,,Teams Integration,Medium,Portal,2026-06-08 09:40:00,9,2026-06-09 01:45:11.537495,Resolved,16.1,False,
+T000177,C1034,,Billing Inquiry,Low,Portal,2026-06-08 13:14:00,62,2026-06-09 02:09:52.252085,Resolved,12.9,False,
+T000178,C1040,,Outage,High,Phone,2026-06-08 15:00:00,77,2026-06-09 09:22:06.330878,Resolved,18.4,True,
+T000179,C1050,,Call Quality,Low,Email,2026-06-08 16:05:00,17,2026-06-08 21:06:28.658904,Resolved,5.0,False,4.0
+T000180,C1040,,Hardware / Desk Phone,Medium,Chat,2026-06-09 08:28:00,33,2026-06-09 09:11:29.941512,Resolved,0.7,False,5.0
+T000181,C1002,,Provisioning / Seat Changes,High,Phone,2026-06-09 12:35:00,88,2026-06-09 19:49:42.232242,Resolved,7.2,True,4.0
+T000182,C1034,,Call Quality,Low,Chat,2026-06-09 16:12:00,95,2026-06-10 06:19:00.281717,Resolved,14.1,False,5.0
+T000183,C1051,,Hardware / Desk Phone,Medium,Email,2026-06-10 09:49:00,36,2026-06-10 20:23:26.317356,Resolved,10.6,False,
+T000184,C1007,,Auto Attendant / Hunt Group Config,Low,Phone,2026-06-10 09:49:00,40,2026-06-11 04:25:33.702907,Resolved,18.6,False,
+T000185,C1045,,Auto Attendant / Hunt Group Config,Low,Phone,2026-06-11 10:11:00,13,2026-06-11 18:59:14.538416,Resolved,8.8,False,
+T000186,C1004,,Teams Integration,High,Portal,2026-06-12 09:16:00,45,2026-06-12 19:19:07.253089,Resolved,10.1,True,4.0
+T000187,C1032,,Call Quality,Medium,Phone,2026-06-12 12:41:00,34,2026-06-12 22:34:11.826122,Resolved,9.9,False,4.0
+T000188,C1027,,Provisioning / Seat Changes,Medium,Portal,2026-06-12 13:19:00,46,2026-06-12 19:53:51.918521,Resolved,6.6,False,
+T000189,C1047,,Voicemail,Medium,Email,2026-06-12 17:08:00,3,2026-06-12 19:49:20.314931,Resolved,2.7,False,
+T000190,C1030,,Call Quality,Medium,Phone,2026-06-13 11:32:00,61,2026-06-13 20:12:24.529797,Resolved,8.7,False,5.0
+T000191,C1031,,Call Quality,Low,Phone,2026-06-14 10:20:00,29,2026-06-14 21:05:29.171381,Resolved,10.8,False,
+T000192,C1015,,Teams Integration,Low,Email,2026-06-15 09:00:00,22,2026-06-15 16:24:23.132276,Resolved,7.4,False,
+T000193,C1030,,Call Quality,Medium,Email,2026-06-15 09:44:00,14,2026-06-15 14:51:45.863811,Resolved,5.1,False,4.0
+T000194,C1003,,Call Quality,Low,Chat,2026-06-16 10:23:00,32,2026-06-16 18:11:31.116537,Resolved,7.8,True,
+T000195,C1025,,Teams Integration,High,Email,2026-06-16 14:30:00,5,2026-06-16 21:46:47.156370,Resolved,7.3,False,
+T000196,C1033,,Call Quality,Low,Phone,2026-06-16 17:25:00,33,2026-06-17 15:59:09.018525,Resolved,22.6,False,
+T000197,C1024,,Teams Integration,Medium,Phone,2026-06-17 08:25:00,4,2026-06-18 14:48:09.348492,Resolved,30.4,True,
+T000198,C1039,,Provisioning / Seat Changes,Low,Portal,2026-06-17 08:49:00,42,2026-06-17 14:19:12.323164,Resolved,5.5,False,
+T000199,C1049,,Outage,High,Portal,2026-06-17 11:53:00,50,2026-06-17 20:40:35.098184,Resolved,8.8,False,3.0
+T000200,C1016,,Auto Attendant / Hunt Group Config,Low,Chat,2026-06-17 16:44:00,38,2026-06-18 22:15:32.962212,Resolved,29.5,False,4.0
+T000201,C1036,,Teams Integration,Medium,Chat,2026-06-18 15:21:00,32,2026-06-18 16:01:20.621805,Resolved,0.7,False,4.0
+T000202,C1013,,Number Porting,Medium,Chat,2026-06-19 10:28:00,2,2026-06-21 05:04:38.587043,Resolved,42.6,False,
+T000203,C1001,,Call Quality,Low,Portal,2026-06-19 11:04:00,20,2026-06-19 19:07:06.959274,Resolved,8.1,False,5.0
+T000204,C1031,,Billing Inquiry,Medium,Portal,2026-06-20 08:17:00,24,2026-06-21 18:42:29.819077,Resolved,34.4,False,
+T000205,C1024,,Billing Inquiry,Medium,Email,2026-06-20 08:35:00,46,2026-06-20 18:50:05.338441,Resolved,10.3,False,5.0
+T000206,C1034,,Call Quality,Medium,Phone,2026-06-20 08:45:00,34,2026-06-22 02:48:15.693865,Resolved,42.1,False,3.0
+T000207,C1028,,Call Quality,High,Phone,2026-06-20 09:01:00,61,2026-06-20 21:05:17.388042,Resolved,12.1,True,3.0
+T000208,C1049,,Outage,High,Phone,2026-06-20 11:08:00,15,2026-06-21 02:57:19.959743,Resolved,15.8,False,
+T000209,C1016,,Call Quality,Low,Phone,2026-06-20 12:30:00,14,2026-06-21 00:25:15.997131,Resolved,11.9,False,
+T000210,C1030,,Call Quality,High,Phone,2026-06-20 15:07:00,15,2026-06-20 15:37:33.960882,Resolved,0.5,True,
+T000211,C1045,,Auto Attendant / Hunt Group Config,Medium,Phone,2026-06-21 09:13:00,58,2026-06-22 06:10:09.343459,Resolved,21.0,False,
+T000212,C1017,,Call Quality,Low,Portal,2026-06-21 10:56:00,31,2026-06-21 18:05:38.485824,Resolved,7.2,False,5.0
+T000213,C1034,,Call Quality,High,Email,2026-06-21 12:04:00,16,2026-06-21 20:55:01.855419,Resolved,8.9,True,3.0
+T000214,C1020,,Provisioning / Seat Changes,Medium,Email,2026-06-21 12:14:00,38,2026-06-22 01:17:01.839762,Resolved,13.1,False,
+T000215,C1002,,Outage,High,Portal,2026-06-22 11:35:00,9,2026-06-22 16:17:47.818993,Resolved,4.7,False,3.0
+T000216,C1026,,Call Quality,Medium,Portal,2026-06-23 10:23:00,79,2026-06-23 11:46:02.286714,Resolved,1.4,False,4.0
+T000217,C1026,,Call Quality,Medium,Portal,2026-06-23 12:12:00,18,2026-06-24 19:24:05.108242,Resolved,31.2,False,4.0
+T000218,C1017,,Call Quality,Medium,Portal,2026-06-23 13:45:00,2,2026-06-23 23:25:19.678497,Resolved,9.7,False,3.0
+T000219,C1033,,Number Porting,Medium,Email,2026-06-23 16:01:00,70,2026-06-24 22:49:35.452363,Resolved,30.8,False,4.0
+T000220,C1018,,Call Quality,Medium,Portal,2026-06-24 08:10:00,55,2026-06-25 05:08:53.727823,Resolved,21.0,False,5.0
+T000221,C1017,,Call Quality,Low,Email,2026-06-24 10:44:00,38,2026-06-25 08:33:15.644899,Resolved,21.8,False,5.0
+T000222,C1020,,Billing Inquiry,High,Portal,2026-06-24 13:27:00,35,2026-06-24 23:20:17.158084,Resolved,9.9,False,5.0
+T000223,C1006,,Outage,Critical,Portal,2026-06-25 09:37:00,34,2026-06-25 14:15:16.053623,Resolved,4.6,True,4.0
+T000224,C1048,,Teams Integration,Low,Email,2026-06-25 11:31:00,20,2026-06-25 15:17:15.748472,Resolved,3.8,False,
+T000225,C1006,,Hardware / Desk Phone,Medium,Email,2026-06-25 13:14:00,21,2026-06-26 18:18:52.972068,Resolved,29.1,False,4.0
+T000226,C1009,,Outage,Critical,Email,2026-06-26 13:33:00,67,2026-06-26 18:26:14.457815,Resolved,4.9,True,
+T000227,C1051,,Provisioning / Seat Changes,Medium,Email,2026-06-27 10:42:00,60,2026-06-28 04:04:42.972297,Resolved,17.4,False,
+T000228,C1042,,Voicemail,Medium,Phone,2026-06-27 12:40:00,85,2026-06-27 18:12:27.376204,Resolved,5.5,False,5.0
+T000229,C1029,,Call Quality,Low,Email,2026-06-28 10:08:00,41,2026-06-28 18:58:34.611224,Resolved,8.8,False,
+T000230,C1043,,Call Quality,Medium,Email,2026-06-28 15:41:00,8,2026-06-29 01:17:40.719994,Resolved,9.6,False,3.0
+T000231,C1003,,Provisioning / Seat Changes,High,Email,2026-06-28 15:44:00,33,2026-06-29 02:49:58.047545,Resolved,11.1,False,4.0
+T000232,C1031,,Hardware / Desk Phone,Medium,Email,2026-06-29 10:34:00,8,2026-06-30 03:31:41.460631,Resolved,17.0,False,
+T000233,C1036,,Billing Inquiry,Medium,Chat,2026-06-29 16:10:00,19,2026-06-30 02:37:48.083679,Resolved,10.5,False,
+T000234,C1005,,Call Quality,Medium,Portal,2026-06-30 08:09:00,38,2026-06-30 13:20:25.692306,Resolved,5.2,False,
+T000235,C1006,,Billing Inquiry,Low,Email,2026-06-30 08:20:00,11,2026-06-30 18:20:20.790745,Resolved,10.0,False,4.0
+T000236,C1024,,Call Quality,Critical,Chat,2026-06-30 13:55:00,27,2026-07-01 05:20:06.718977,Resolved,15.4,False,3.0
+T000237,C1046,,Call Quality,High,Portal,2026-07-01 08:37:00,22,2026-07-01 11:15:53.011401,Resolved,2.6,False,3.0
+T000238,C1041,,Number Porting,Medium,Chat,2026-07-01 09:30:00,19,2026-07-02 01:38:10.645206,Resolved,16.1,True,5.0
+T000239,C1002,,Auto Attendant / Hunt Group Config,Low,Portal,2026-07-01 10:10:00,31,2026-07-01 22:36:15.512708,Resolved,12.4,False,
+T000240,C1021,,Call Quality,Medium,Portal,2026-07-01 12:24:00,8,2026-07-02 18:22:04.707146,Resolved,30.0,False,
+T000241,C1034,,Outage,High,Phone,2026-07-01 14:55:00,5,2026-07-02 09:02:43.514336,Resolved,18.1,True,4.0
+T000242,C1042,,Call Quality,Medium,Email,2026-07-01 15:23:00,20,2026-07-02 02:07:05.566395,Resolved,10.7,False,4.0
+T000243,C1020,,Voicemail,High,Email,2026-07-01 15:40:00,22,2026-07-01 23:58:20.633060,Resolved,8.3,True,
+T000244,C1014,,Auto Attendant / Hunt Group Config,Low,Phone,2026-07-01 16:42:00,62,2026-07-02 10:24:35.313490,Resolved,17.7,False,3.0
+T000245,C1021,,Teams Integration,High,Chat,2026-07-02 09:51:00,38,2026-07-02 19:29:40.775262,Resolved,9.6,False,4.0
+T000246,C1022,,Call Quality,Medium,Phone,2026-07-02 09:58:00,7,2026-07-03 05:50:01.363417,Resolved,19.9,False,4.0
+T000247,C1013,,Call Quality,Critical,Phone,2026-07-02 14:41:00,117,2026-07-02 16:43:49.221669,Resolved,2.0,False,
+T000248,C1024,,Outage,Critical,Portal,2026-07-02 15:35:00,11,2026-07-02 17:37:48.052337,Resolved,2.0,False,3.0
+T000249,C1002,,Call Quality,Medium,Portal,2026-07-03 11:30:00,79,2026-07-03 18:29:54.887198,Resolved,7.0,False,
+T000250,C1007,,Outage,High,Portal,2026-07-03 16:23:00,6,2026-07-03 20:28:32.417287,Resolved,4.1,False,
+T000251,C1040,,Call Quality,Medium,Email,2026-07-04 09:27:00,18,2026-07-04 22:01:02.339050,Resolved,12.6,False,4.0
+T000252,C1022,,Provisioning / Seat Changes,Medium,Phone,2026-07-04 11:10:00,17,2026-07-04 16:06:21.213980,Resolved,4.9,False,5.0
+T000253,C1030,,Call Quality,High,Phone,2026-07-06 08:19:00,38,2026-07-06 21:41:14.157341,Resolved,13.4,False,3.0
+T000254,C1036,,Call Quality,Medium,Phone,2026-07-06 11:44:00,102,2026-07-06 19:17:56.093416,Resolved,7.6,False,5.0
+T000255,C1046,,Number Porting,Medium,Email,2026-07-06 12:24:00,20,2026-07-07 19:31:48.205141,Resolved,31.1,True,4.0
+T000256,C1033,,Voicemail,High,Chat,2026-07-06 15:59:00,4,2026-07-07 01:24:21.057067,Resolved,9.4,False,3.0
+T000257,C1047,,Number Porting,Medium,Portal,2026-07-07 10:27:00,48,2026-07-08 03:24:12.664986,Resolved,17.0,False,5.0
+T000258,C1026,,Billing Inquiry,High,Email,2026-07-07 10:33:00,23,2026-07-07 19:21:18.169205,Resolved,8.8,False,
+T000259,C1055,,Voicemail,Medium,Portal,2026-07-08 16:31:00,7,2026-07-10 03:04:06.996348,Resolved,34.6,False,2.0
+T000260,C1001,,Outage,Critical,Portal,2026-07-10 11:56:00,21,2026-07-10 19:54:36.533275,Resolved,8.0,False,
+T000261,C1018,,Call Quality,Low,Portal,2026-07-10 14:04:00,14,2026-07-10 17:30:18.136523,Resolved,3.4,False,
+T000262,C1043,,Call Quality,Low,Phone,2026-07-10 16:46:00,51,2026-07-10 19:51:21.872681,Resolved,3.1,False,5.0
+T000263,C1043,,Number Porting,Low,Portal,2026-07-11 16:15:00,140,2026-07-15 14:08:24.934521,Resolved,93.9,False,4.0
+T000264,C1009,,Call Quality,Medium,Phone,2026-07-12 09:46:00,96,2026-07-13 01:30:44.259746,Resolved,15.7,False,5.0
+T000265,C1023,,Call Quality,Critical,Phone,2026-07-12 11:25:00,27,2026-07-12 16:17:54.225402,Resolved,4.9,False,
+T000266,C1052,,Call Quality,Medium,Email,2026-07-12 11:33:00,32,2026-07-13 05:52:50.989811,Resolved,18.3,False,5.0
+T000267,C1052,,Provisioning / Seat Changes,High,Phone,2026-07-13 11:36:00,67,2026-07-13 17:33:11.336979,Resolved,6.0,True,2.0
+T000268,C1041,,Hardware / Desk Phone,Low,Phone,2026-07-13 15:34:00,59,2026-07-13 21:21:09.121489,Resolved,5.8,False,
+T000269,C1001,,Call Quality,Low,Email,2026-07-14 09:39:00,48,2026-07-14 20:49:02.127950,Resolved,11.2,False,4.0
+T000270,C1053,,Provisioning / Seat Changes,Medium,Email,2026-07-14 09:43:00,68,2026-07-14 17:34:45.698035,Resolved,7.9,False,
+T000271,C1028,,Call Quality,Low,Email,2026-07-14 11:24:00,21,2026-07-14 20:53:15.156806,Resolved,9.5,False,
+T000272,C1048,,Call Quality,Medium,Email,2026-07-14 12:59:00,22,2026-07-14 21:42:06.976295,Resolved,8.7,False,
+T000273,C1002,,Hardware / Desk Phone,High,Phone,2026-07-14 14:44:00,72,2026-07-14 15:57:35.473565,Resolved,1.2,False,
+T000274,C1011,,Call Quality,Medium,Phone,2026-07-16 17:14:00,19,2026-07-17 12:45:56.803509,Resolved,19.5,False,
+T000275,C1023,,Call Quality,Low,Chat,2026-07-17 14:45:00,26,2026-07-17 22:53:33.856516,Resolved,8.1,False,4.0
+T000276,C1030,,Voicemail,High,Phone,2026-07-18 12:47:00,15,2026-07-18 15:41:41.777363,Resolved,2.9,False,1.0
+T000277,C1025,,Auto Attendant / Hunt Group Config,High,Phone,2026-07-19 13:23:00,13,2026-07-20 04:00:15.061103,Resolved,14.6,False,
+T000278,C1009,,Hardware / Desk Phone,Medium,Chat,2026-07-19 14:55:00,7,2026-07-19 15:55:14.913518,Resolved,1.0,True,5.0
+T000279,C1012,,Billing Inquiry,Low,Portal,2026-07-19 15:28:00,69,2026-07-20 16:11:47.255172,Resolved,24.7,False,
+T000280,C1049,,Teams Integration,Medium,Phone,2026-07-19 15:39:00,78,2026-07-20 14:35:16.063647,Resolved,22.9,False,5.0
+T000281,C1004,,Auto Attendant / Hunt Group Config,High,Email,2026-07-20 13:25:00,53,2026-07-21 01:40:43.633555,Resolved,12.3,False,3.0
+T000282,C1023,,Call Quality,Medium,Portal,2026-07-20 15:02:00,52,2026-07-21 01:30:13.431317,Resolved,10.5,False,
+T000283,C1023,,Outage,High,Phone,2026-07-21 09:22:00,48,2026-07-21 12:50:11.219467,Resolved,3.5,False,
+T000284,C1030,,Number Porting,Medium,Phone,2026-07-21 13:59:00,15,2026-07-23 02:26:43.288853,Resolved,36.5,False,5.0
+T000285,C1033,,Billing Inquiry,High,Email,2026-07-22 09:10:00,50,2026-07-22 18:41:23.158334,Resolved,9.5,False,
+T000286,C1027,,Call Quality,Low,Email,2026-07-22 09:41:00,9,2026-07-23 12:45:40.159123,Resolved,27.1,False,5.0
+T000287,C1048,,Provisioning / Seat Changes,Medium,Phone,2026-07-22 13:35:00,51,2026-07-22 20:20:21.395125,Resolved,6.8,False,5.0
+T000288,C1001,,Call Quality,High,Email,2026-07-22 15:58:00,38,2026-07-23 03:24:46.156997,Resolved,11.4,False,
+T000289,C1029,,Call Quality,Medium,Chat,2026-07-23 13:33:00,2,2026-07-24 01:55:18.283379,Resolved,12.4,False,3.0
+T000290,C1033,,Teams Integration,Low,Phone,2026-07-24 08:32:00,8,2026-07-26 02:41:31.320919,Resolved,42.2,False,
+T000291,C1026,,Call Quality,High,Chat,2026-07-25 08:58:00,59,2026-07-25 11:27:36.217216,Resolved,2.5,False,
+T000292,C1033,,Provisioning / Seat Changes,Medium,Email,2026-07-25 09:08:00,49,2026-07-27 10:13:12.252258,Resolved,49.1,False,3.0
+T000293,C1046,,Call Quality,Medium,Chat,2026-07-25 09:13:00,16,2026-07-26 02:44:46.595176,Resolved,17.5,False,3.0
+T000294,C1053,,Provisioning / Seat Changes,High,Portal,2026-07-26 08:38:00,38,2026-07-26 12:30:32.680746,Resolved,3.9,False,4.0
+T000295,C1023,,Billing Inquiry,Medium,Chat,2026-07-27 09:00:00,25,2026-07-28 08:14:45.843722,Resolved,23.2,False,4.0
+T000296,C1055,,Auto Attendant / Hunt Group Config,Medium,Chat,2026-07-27 11:14:00,37,2026-07-27 21:33:28.054363,Resolved,10.3,False,
+T000297,C1035,,Outage,Critical,Email,2026-07-27 13:03:00,14,2026-07-27 15:16:22.477449,Resolved,2.2,False,
+T000298,C1038,,Billing Inquiry,Low,Portal,2026-07-27 13:20:00,40,2026-07-28 03:35:44.182842,Resolved,14.3,False,
+T000299,C1019,,Call Quality,Low,Portal,2026-07-27 14:42:00,13,2026-07-28 03:18:14.061760,Resolved,12.6,True,5.0
+T000300,C1005,,Call Quality,Medium,Phone,2026-07-28 08:53:00,5,2026-07-28 17:27:21.012215,Resolved,8.6,False,4.0
+T000301,C1014,,Call Quality,Medium,Phone,2026-07-28 09:23:00,26,2026-07-29 05:46:22.799825,Resolved,20.4,False,4.0
+T000302,C1028,,Call Quality,High,Portal,2026-07-28 11:16:00,39,2026-07-29 03:52:53.433515,Resolved,16.6,False,3.0
+T000303,C1049,,Provisioning / Seat Changes,Medium,Phone,2026-07-28 12:19:00,161,2026-07-29 02:24:11.011152,Resolved,14.1,False,
+T000304,C1052,,Call Quality,Low,Phone,2026-07-28 12:23:00,46,2026-07-28 22:11:46.431813,Resolved,9.8,False,5.0
+T000305,C1016,,Billing Inquiry,High,Portal,2026-07-28 17:29:00,9,2026-07-28 22:13:07.938853,Resolved,4.7,True,4.0
+T000306,C1028,,Provisioning / Seat Changes,Medium,Portal,2026-07-29 11:00:00,54,2026-07-30 02:00:31.295846,Resolved,15.0,False,
+T000307,C1024,,Billing Inquiry,Medium,Chat,2026-07-29 14:25:00,30,2026-07-30 02:26:53.633476,Resolved,12.0,False,
+T000308,C1029,,Provisioning / Seat Changes,Medium,Email,2026-07-31 11:08:00,59,2026-07-31 19:54:38.687350,Resolved,8.8,False,4.0
+T000309,C1047,,Outage,High,Phone,2026-07-31 17:22:00,18,2026-08-01 00:37:53.062579,Resolved,7.3,False,1.0
+T000310,C1001,,Call Quality,Medium,Phone,2026-08-01 09:00:00,13,2026-08-01 10:27:30.598781,Resolved,1.5,False,4.0
+T000311,C1030,,Call Quality,High,Phone,2026-08-01 09:29:00,28,2026-08-01 21:32:52.963586,Resolved,12.1,True,3.0
+T000312,C1014,,Call Quality,High,Email,2026-08-01 10:14:00,45,2026-08-01 23:30:38.931703,Resolved,13.3,False,3.0
+T000313,C1028,,Hardware / Desk Phone,High,Email,2026-08-01 10:32:00,39,2026-08-01 18:42:46.635011,Resolved,8.2,False,3.0
+T000314,C1045,,Call Quality,Low,Phone,2026-08-02 11:20:00,42,2026-08-02 15:05:13.408970,Resolved,3.8,False,
+T000315,C1015,,Outage,High,Portal,2026-08-03 11:51:00,36,2026-08-03 16:26:56.440731,Resolved,4.6,False,5.0
+T000316,C1034,,Call Quality,Medium,Phone,2026-08-03 12:02:00,15,2026-08-03 15:57:43.236292,Resolved,3.9,False,
+T000317,C1039,,Billing Inquiry,Medium,Phone,2026-08-03 12:04:00,16,2026-08-03 15:44:34.410880,Resolved,3.7,False,4.0
+T000318,C1054,,Teams Integration,Low,Phone,2026-08-03 13:10:00,51,2026-08-04 11:23:20.935385,Resolved,22.2,False,4.0
+T000319,C1046,,Hardware / Desk Phone,Medium,Phone,2026-08-03 14:46:00,38,2026-08-04 01:12:28.252706,Resolved,10.4,False,
+T000320,C1025,,Call Quality,Medium,Phone,2026-08-03 16:23:00,39,2026-08-04 05:18:39.443834,Resolved,12.9,False,
+T000321,C1036,,Provisioning / Seat Changes,Medium,Phone,2026-08-04 08:35:00,14,2026-08-04 21:07:07.635786,Resolved,12.5,False,4.0
+T000322,C1053,,Auto Attendant / Hunt Group Config,Medium,Phone,2026-08-04 08:41:00,7,2026-08-04 10:41:16.181273,Resolved,2.0,False,
+T000323,C1006,,Teams Integration,Low,Portal,2026-08-04 11:54:00,20,2026-08-05 04:12:28.262799,Resolved,16.3,False,
+T000324,C1013,,Call Quality,Medium,Phone,2026-08-04 16:20:00,28,2026-08-05 18:54:30.136430,Resolved,26.6,False,4.0
+T000325,C1014,,Provisioning / Seat Changes,Medium,Phone,2026-08-05 10:47:00,35,2026-08-05 23:28:14.288623,Resolved,12.7,False,
+T000326,C1025,,Outage,Critical,Phone,2026-08-05 11:50:00,55,2026-08-05 13:54:29.579141,Resolved,2.1,True,
+T000327,C1006,,Provisioning / Seat Changes,High,Chat,2026-08-05 14:00:00,82,2026-08-05 19:17:59.024893,Resolved,5.3,False,
+T000328,C1022,,Call Quality,Low,Portal,2026-08-05 16:28:00,27,2026-08-06 12:36:34.593503,Resolved,20.1,False,
+T000329,C1037,,Call Quality,Medium,Phone,2026-08-06 10:56:00,6,2026-08-06 20:14:21.155747,Resolved,9.3,False,4.0
+T000330,C1017,,Call Quality,Medium,Phone,2026-08-06 14:15:00,49,2026-08-07 00:14:15.474639,Resolved,10.0,False,4.0
+T000331,C1054,,Call Quality,Low,Email,2026-08-06 16:24:00,32,2026-08-07 13:07:32.484550,Resolved,20.7,False,
+T000332,C1024,,Billing Inquiry,Critical,Email,2026-08-07 09:08:00,11,2026-08-07 13:13:34.954996,Resolved,4.1,True,
+T000333,C1046,,Hardware / Desk Phone,Critical,Portal,2026-08-07 09:40:00,11,2026-08-07 11:32:23.132266,Resolved,1.9,True,4.0
+T000334,C1052,,Number Porting,Medium,Phone,2026-08-07 11:54:00,23,2026-08-08 20:11:49.079038,Resolved,32.3,True,4.0
+T000335,C1003,,Call Quality,Low,Email,2026-08-08 14:27:00,51,2026-08-08 21:51:08.341114,Resolved,7.4,False,
+T000336,C1015,,Auto Attendant / Hunt Group Config,Low,Chat,2026-08-08 17:34:00,9,2026-08-10 12:37:08.895989,Resolved,43.1,False,
+T000337,C1027,,Call Quality,Low,Chat,2026-08-10 11:51:00,11,2026-08-10 14:42:36.526165,Resolved,2.9,False,
+T000338,C1035,,Outage,High,Email,2026-08-10 15:30:00,24,2026-08-10 17:15:17.472728,Resolved,1.8,False,
+T000339,C1024,,Call Quality,Low,Portal,2026-08-11 13:51:00,56,2026-08-12 11:59:43.260148,Resolved,22.1,False,5.0
+T000340,C1005,,Billing Inquiry,Low,Phone,2026-08-11 15:13:00,46,2026-08-12 16:05:40.714255,Resolved,24.9,False,5.0
+T000341,C1023,,Number Porting,Medium,Email,2026-08-11 15:40:00,30,2026-08-17 03:26:03.347481,Resolved,131.8,False,5.0
+T000342,C1052,,Auto Attendant / Hunt Group Config,Medium,Chat,2026-08-12 09:42:00,16,2026-08-12 20:22:13.502575,Resolved,10.7,False,
+T000343,C1048,,Provisioning / Seat Changes,Medium,Email,2026-08-12 11:03:00,26,2026-08-12 16:46:40.562675,Resolved,5.7,True,5.0
+T000344,C1048,,Call Quality,Medium,Portal,2026-08-12 15:26:00,36,2026-08-12 16:05:57.569883,Resolved,0.7,False,5.0
+T000345,C1023,,Provisioning / Seat Changes,Medium,Portal,2026-08-12 17:32:00,19,2026-08-12 21:59:30.937121,Resolved,4.5,False,
+T000346,C1018,,Voicemail,Medium,Portal,2026-08-13 13:42:00,51,2026-08-13 22:38:40.671272,Resolved,8.9,False,4.0
+T000347,C1054,,Outage,High,Portal,2026-08-14 11:30:00,21,2026-08-14 23:33:35.546958,Resolved,12.1,False,
+T000348,C1003,,Call Quality,Low,Portal,2026-08-14 13:03:00,36,2026-08-15 16:45:45.846198,Resolved,27.7,False,3.0
+T000349,C1027,,Call Quality,Medium,Portal,2026-08-14 13:07:00,21,2026-08-15 00:16:48.267502,Resolved,11.2,False,5.0
+T000350,C1017,,Call Quality,High,Phone,2026-08-14 14:39:00,13,2026-08-14 15:59:36.169149,Resolved,1.3,True,4.0
+T000351,C1019,,Billing Inquiry,High,Phone,2026-08-14 15:24:00,83,2026-08-15 12:21:37.568354,Resolved,21.0,True,4.0
+T000352,C1020,,Billing Inquiry,Low,Phone,2026-08-15 11:02:00,28,2026-08-15 14:25:25.192833,Resolved,3.4,False,4.0
+T000353,C1012,,Call Quality,Low,Portal,2026-08-15 15:11:00,68,2026-08-15 21:04:05.476932,Resolved,5.9,False,
+T000354,C1009,,Call Quality,High,Portal,2026-08-16 08:09:00,60,2026-08-16 11:09:29.336323,Resolved,3.0,True,3.0
+T000355,C1051,,Call Quality,Low,Phone,2026-08-16 10:01:00,11,2026-08-17 08:34:55.526960,Resolved,22.6,False,
+T000356,C1031,,Call Quality,Medium,Email,2026-08-16 13:36:00,25,2026-08-16 19:40:07.649200,Resolved,6.1,False,
+T000357,C1018,,Number Porting,Medium,Chat,2026-08-16 14:47:00,28,2026-08-20 16:39:58.523665,Resolved,97.9,False,
+T000358,C1055,,Number Porting,Low,Portal,2026-08-16 16:54:00,14,2026-08-24 01:45:50.484183,Resolved,176.9,True,4.0
+T000359,C1035,,Voicemail,Low,Portal,2026-08-16 16:56:00,30,2026-08-17 18:46:16.431744,Resolved,25.8,False,4.0
+T000360,C1051,,Hardware / Desk Phone,Medium,Phone,2026-08-17 17:19:00,43,2026-08-18 07:09:06.986557,Resolved,13.8,False,4.0
+T000361,C1032,,Number Porting,High,Chat,2026-08-17 17:38:00,62,2026-08-21 00:31:17.456169,Resolved,78.9,False,2.0
+T000362,C1006,,Call Quality,High,Phone,2026-08-18 11:02:00,11,2026-08-18 15:56:25.742383,Resolved,4.9,False,3.0
+T000363,C1055,,Teams Integration,Low,Email,2026-08-18 11:46:00,60,2026-08-19 11:14:07.970653,Resolved,23.5,False,3.0
+T000364,C1052,,Outage,High,Phone,2026-08-18 11:58:00,34,2026-08-19 01:03:57.065058,Resolved,13.1,False,4.0
+T000365,C1053,,Call Quality,Low,Phone,2026-08-18 14:29:00,173,2026-08-18 19:33:43.822434,Resolved,5.1,False,5.0
+T000366,C1024,,Provisioning / Seat Changes,Low,Phone,2026-08-18 16:27:00,19,2026-08-18 19:22:19.221314,Resolved,2.9,False,
+T000367,C1046,,Call Quality,Medium,Phone,2026-08-19 08:18:00,22,2026-08-19 10:34:18.001667,Resolved,2.3,False,5.0
+T000368,C1028,,Call Quality,Medium,Phone,2026-08-19 10:09:00,27,2026-08-19 21:21:59.341145,Resolved,11.2,False,
+T000369,C1014,,Voicemail,High,Chat,2026-08-19 17:31:00,98,2026-08-19 19:54:30.951956,Resolved,2.4,True,
+T000370,C1011,,Hardware / Desk Phone,Low,Phone,2026-08-22 11:07:00,13,2026-08-22 14:58:08.154385,Resolved,3.9,False,
+T000371,C1014,,Outage,High,Phone,2026-08-22 12:46:00,21,2026-08-22 17:02:59.510824,Resolved,4.3,True,
+T000372,C1042,,Provisioning / Seat Changes,Medium,Email,2026-08-22 14:28:00,9,2026-08-22 19:14:36.740162,Resolved,4.8,False,4.0
+T000373,C1035,,Call Quality,Low,Phone,2026-08-22 15:21:00,55,2026-08-23 03:48:49.958784,Resolved,12.5,False,
+T000374,C1033,,Call Quality,Medium,Portal,2026-08-23 08:55:00,26,2026-08-23 18:40:16.236135,Resolved,9.8,False,
+T000375,C1049,,Auto Attendant / Hunt Group Config,High,Portal,2026-08-23 10:17:00,60,2026-08-23 19:02:33.357639,Resolved,8.8,False,3.0
+T000376,C1023,,Auto Attendant / Hunt Group Config,Low,Portal,2026-08-23 13:32:00,43,2026-08-24 05:46:29.199862,Resolved,16.2,False,
+T000377,C1016,,Call Quality,Medium,Portal,2026-08-23 16:48:00,17,2026-08-23 20:57:46.755228,Resolved,4.2,False,
+T000378,C1048,,Provisioning / Seat Changes,Medium,Phone,2026-08-24 12:23:00,25,2026-08-25 00:15:26.504781,Resolved,11.9,False,
+T000379,C1033,,Provisioning / Seat Changes,Low,Phone,2026-08-24 17:55:00,24,2026-08-25 18:34:48.183884,Resolved,24.7,False,4.0
+T000380,C1003,,Billing Inquiry,Low,Email,2026-08-25 10:57:00,28,2026-08-27 22:44:09.665563,Resolved,59.8,False,
+T000381,C1050,,Outage,High,Email,2026-08-25 15:20:00,56,2026-08-25 22:32:01.066418,Resolved,7.2,False,
+T000382,C1018,,Call Quality,Critical,Phone,2026-08-26 08:02:00,73,2026-08-26 10:51:50.347242,Resolved,2.8,False,4.0
+T000383,C1052,,Billing Inquiry,Critical,Portal,2026-08-26 09:26:00,10,2026-08-26 10:07:02.191822,Resolved,0.7,True,2.0
+T000384,C1024,,Call Quality,Low,Portal,2026-08-27 08:11:00,7,2026-08-28 03:09:34.216468,Resolved,19.0,False,
+T000385,C1001,,Call Quality,Low,Email,2026-08-27 14:11:00,52,2026-08-28 09:29:32.550087,Resolved,19.3,False,4.0
+T000386,C1027,,Auto Attendant / Hunt Group Config,High,Phone,2026-08-28 10:05:00,45,2026-08-28 14:25:11.163497,Resolved,4.3,False,4.0
+T000387,C1004,,Call Quality,Medium,Chat,2026-08-28 10:34:00,33,2026-08-29 08:14:33.352977,Resolved,21.7,False,
+T000388,C1031,,Billing Inquiry,High,Phone,2026-08-28 11:09:00,49,2026-08-28 13:33:16.947446,Resolved,2.4,True,2.0
+T000389,C1039,,Hardware / Desk Phone,Medium,Phone,2026-08-28 11:35:00,20,2026-08-28 21:10:38.559740,Resolved,9.6,False,4.0
+T000390,C1050,,Hardware / Desk Phone,Medium,Portal,2026-08-28 11:53:00,47,2026-08-29 03:56:35.513649,Resolved,16.1,False,
+T000391,C1028,,Teams Integration,Medium,Phone,2026-08-29 09:56:00,39,2026-08-30 01:19:12.294858,Resolved,15.4,False,
+T000392,C1021,,Hardware / Desk Phone,Low,Chat,2026-08-29 10:33:00,121,2026-08-30 05:07:54.168079,Resolved,18.6,False,
+T000393,C1039,,Teams Integration,Medium,Phone,2026-08-29 13:16:00,27,2026-08-30 23:28:27.845693,Resolved,34.2,False,3.0
+T000394,C1054,,Call Quality,High,Phone,2026-08-30 11:14:00,27,2026-08-31 00:53:29.379880,Resolved,13.7,True,
+T000395,C1041,,Number Porting,Medium,Phone,2026-08-31 13:03:00,20,2026-08-31 16:54:30.917981,Resolved,3.9,False,
+T000396,C1042,,Number Porting,Low,Phone,2026-09-01 12:50:00,74,2026-09-02 00:41:35.715165,Resolved,11.9,False,2.0
+T000397,C1039,,Call Quality,Medium,Portal,2026-09-01 17:29:00,48,2026-09-02 10:21:19.320819,Resolved,16.9,False,5.0
+T000398,C1024,,Provisioning / Seat Changes,Medium,Portal,2026-09-02 14:53:00,54,2026-09-02 21:40:14.307846,Resolved,6.8,False,4.0
+T000399,C1005,,Provisioning / Seat Changes,Low,Phone,2026-09-02 16:04:00,33,2026-09-03 12:30:30.882519,Resolved,20.4,False,3.0
+T000400,C1034,,Teams Integration,Low,Chat,2026-09-03 08:40:00,76,2026-09-04 01:56:31.441766,Resolved,17.3,False,5.0
+T000401,C1025,,Outage,High,Portal,2026-09-03 12:45:00,18,2026-09-03 13:37:24.400689,Resolved,0.9,True,5.0
+T000402,C1009,,Outage,Critical,Portal,2026-09-03 13:25:00,38,2026-09-03 23:43:34.665367,Resolved,10.3,False,
+T000403,C1047,,Auto Attendant / Hunt Group Config,High,Chat,2026-09-04 13:42:00,24,2026-09-04 20:39:12.483784,Resolved,7.0,False,
+T000404,C1048,,Call Quality,Medium,Portal,2026-09-04 14:31:00,6,2026-09-04 23:36:51.541742,Resolved,9.1,True,2.0
+T000405,C1037,,Call Quality,Medium,Email,2026-09-05 11:53:00,20,2026-09-05 17:07:17.774507,Resolved,5.2,False,4.0
+T000406,C1039,,Billing Inquiry,Medium,Portal,2026-09-05 13:07:00,30,2026-09-07 06:16:47.573180,Resolved,41.2,False,5.0
+T000407,C1005,,Call Quality,High,Chat,2026-09-06 13:46:00,37,2026-09-06 22:12:37.613203,Resolved,8.4,False,3.0
+T000408,C1055,,Teams Integration,Low,Chat,2026-09-06 15:53:00,40,2026-09-07 09:17:51.013249,Resolved,17.4,False,4.0
+T000409,C1018,,Call Quality,Medium,Portal,2026-09-07 15:19:00,42,2026-09-08 01:13:52.321334,Resolved,9.9,False,5.0
+T000410,C1021,,Call Quality,Medium,Email,2026-09-08 08:44:00,12,2026-09-08 17:07:59.684458,Resolved,8.4,False,
+T000411,C1016,,Provisioning / Seat Changes,High,Phone,2026-09-08 12:23:00,36,2026-09-09 01:12:20.079771,Resolved,12.8,True,3.0
+T000412,C1021,,Call Quality,Medium,Email,2026-09-08 13:50:00,64,2026-09-09 01:48:24.719967,Resolved,12.0,False,4.0
+T000413,C1034,,Outage,High,Portal,2026-09-08 13:52:00,30,2026-09-09 07:16:03.706338,Resolved,17.4,False,4.0
+T000414,C1009,,Call Quality,Medium,Email,2026-09-09 10:08:00,19,2026-09-09 23:25:33.825110,Resolved,13.3,False,4.0
+T000415,C1051,,Call Quality,High,Phone,2026-09-09 12:09:00,31,2026-09-09 19:43:45.719405,Resolved,7.6,False,4.0
+T000416,C1016,,Call Quality,Medium,Phone,2026-09-09 13:30:00,15,2026-09-10 09:00:00.271472,Resolved,19.5,False,5.0
+T000417,C1019,,Hardware / Desk Phone,Low,Phone,2026-09-09 14:26:00,13,2026-09-10 01:02:35.789372,Resolved,10.6,False,
+T000418,C1052,,Call Quality,Medium,Chat,2026-09-09 17:27:00,98,2026-09-10 01:42:01.923375,Resolved,8.3,False,
+T000419,C1016,,Outage,Critical,Chat,2026-09-11 08:34:00,39,2026-09-11 09:25:04.269502,Resolved,0.9,False,
+T000420,C1031,,Teams Integration,Medium,Chat,2026-09-11 10:00:00,24,2026-09-11 11:25:55.999882,Resolved,1.4,False,4.0
+T000421,C1055,,Auto Attendant / Hunt Group Config,Low,Chat,2026-09-11 13:11:00,36,2026-09-12 18:57:35.061209,Resolved,29.8,False,4.0
+T000422,C1001,,Provisioning / Seat Changes,Critical,Portal,2026-09-11 17:51:00,35,2026-09-11 21:35:16.686104,Resolved,3.7,True,
+T000423,C1025,,Call Quality,High,Chat,2026-09-13 16:34:00,2,2026-09-13 19:25:57.907578,Resolved,2.9,False,
+T000424,C1029,,Outage,High,Phone,2026-09-14 15:44:00,31,2026-09-14 19:33:12.456883,Resolved,3.8,True,2.0
+T000425,C1047,,Call Quality,Medium,Phone,2026-09-16 10:19:00,118,2026-09-16 14:12:54.222808,Resolved,3.9,False,4.0
+T000426,C1046,,Call Quality,Medium,Portal,2026-09-17 09:48:00,39,2026-09-17 18:27:33.111165,Resolved,8.7,False,4.0
+T000427,C1001,,Call Quality,High,Email,2026-09-17 12:50:00,29,2026-09-17 15:40:50.588167,Resolved,2.8,True,
+T000428,C1024,,Provisioning / Seat Changes,Medium,Email,2026-09-17 14:13:00,32,2026-09-18 03:42:24.422872,Resolved,13.5,False,
+T000429,C1017,,Provisioning / Seat Changes,Low,Phone,2026-09-17 14:27:00,14,2026-09-18 03:22:09.015446,Resolved,12.9,False,
+T000430,C1040,,Auto Attendant / Hunt Group Config,Medium,Email,2026-09-18 08:54:00,66,2026-09-18 17:14:56.444147,Resolved,8.3,False,4.0
+T000431,C1022,,Teams Integration,Low,Phone,2026-09-18 09:12:00,37,2026-09-19 04:29:37.127077,Resolved,19.3,False,
+T000432,C1052,,Call Quality,High,Phone,2026-09-18 09:41:00,60,2026-09-18 21:37:50.301714,Resolved,11.9,True,4.0
+T000433,C1020,,Outage,Critical,Chat,2026-09-18 09:51:00,23,2026-09-18 12:36:37.046697,Resolved,2.8,True,4.0
+T000434,C1051,,Hardware / Desk Phone,Medium,Portal,2026-09-18 11:43:00,17,2026-09-20 05:30:04.991225,Resolved,41.8,False,4.0
+T000435,C1055,,Call Quality,Medium,Email,2026-09-20 14:24:00,92,2026-09-21 06:32:52.034090,Resolved,16.1,False,
+T000436,C1004,,Billing Inquiry,Medium,Phone,2026-09-21 16:59:00,15,2026-09-22 02:36:37.159329,Resolved,9.6,False,5.0
+T000437,C1017,,Call Quality,Low,Chat,2026-09-21 17:52:00,28,2026-09-22 06:48:37.435842,Resolved,12.9,False,4.0
+T000438,C1038,,Call Quality,Medium,Email,2026-09-22 14:32:00,14,2026-09-22 21:58:25.948474,Resolved,7.4,False,
+T000439,C1006,,Call Quality,Low,Portal,2026-09-22 16:08:00,50,2026-09-23 15:46:13.338525,Resolved,23.6,False,4.0
+T000440,C1019,,Teams Integration,Critical,Phone,2026-09-23 14:26:00,27,2026-09-23 15:51:12.220484,Resolved,1.4,False,5.0
+T000441,C1009,,Call Quality,Low,Phone,2026-09-24 09:57:00,59,2026-09-24 13:55:53.844274,Resolved,4.0,False,
+T000442,C1030,,Outage,Critical,Email,2026-09-24 11:57:00,17,2026-09-25 00:22:15.034949,Resolved,12.4,False,3.0
+T000443,C1040,,Hardware / Desk Phone,Low,Phone,2026-09-24 12:12:00,59,2026-09-25 12:02:22.865454,Resolved,23.8,False,
+T000444,C1031,,Call Quality,High,Phone,2026-09-24 14:09:00,31,2026-09-24 19:06:24.849689,Resolved,5.0,False,4.0
+T000445,C1026,,Billing Inquiry,Medium,Chat,2026-09-24 17:46:00,80,2026-09-25 13:36:02.255199,Resolved,19.8,False,
+T000446,C1047,,Teams Integration,High,Phone,2026-09-26 08:10:00,14,2026-09-26 11:20:33.890733,Resolved,3.2,True,3.0
+T000447,C1038,,Number Porting,Low,Email,2026-09-26 13:34:00,32,,Open,,False,
+T000448,C1002,,Call Quality,Medium,Portal,2026-09-26 15:12:00,64,2026-09-26 23:39:37.664161,Resolved,8.5,False,2.0
+T000449,C1042,,Call Quality,High,Phone,2026-09-28 11:53:00,16,2026-09-28 13:08:10.199991,Resolved,1.3,False,
+T000450,C1020,,Call Quality,Medium,Email,2026-09-28 13:39:00,15,2026-09-28 15:02:51.237317,Resolved,1.4,False,
+T000451,C1033,,Call Quality,Medium,Phone,2026-09-29 11:31:00,14,2026-09-29 23:07:07.756237,Resolved,11.6,False,
+T000452,C1031,,Call Quality,Medium,Email,2026-09-29 13:48:00,14,2026-09-30 14:50:17.161615,Resolved,25.0,False,2.0
+T000453,C1046,,Call Quality,Medium,Portal,2026-09-29 16:15:00,31,2026-09-30 12:35:01.421697,Resolved,20.3,False,
